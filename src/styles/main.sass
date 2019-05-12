@@ -1,0 +1,297 @@
+@font-face
+  font-family: 'GTWalsheimPro'
+  src: url('../fonts/GTWalsheimProBold.woff2') format("woff2")
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: 'GTWalsheimPro'
+  src: url('../fonts/GTWalsheimProMedium.woff2') format("woff2")
+  font-weight: 500
+  font-style: normal
+
+@font-face
+  font-family: 'GTWalsheimPro'
+  src: url('../fonts/GTWalsheimProLight.woff2') format("woff2")
+  font-weight: 300
+  font-style: normal
+
+@font-face
+  font-family: 'GTWalsheimPro'
+  src: url('../fonts/GTWalsheimProRegular.woff2') format("woff2")
+  font-weight: normal
+  font-style: normal
+
+::selection
+  background-color: #8150cd
+
+.s-white::selection
+    background-color: white
+.s-red::selection
+    background-color: red
+
+*
+  box-sizing: border-box
+
+h2
+  font-size: inherit
+
+html, body
+  overflow: hidden
+  height: 100%
+
+#___gatsby
+  overflow: auto
+  height: 100%
+
+html
+  font-size: 12px
+  @media (min-width: 768px)
+    font-size: 14px
+
+body
+  background-color: #141414
+  color: white
+  font-family: 'GTWalsheimPro', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-rendering: optimizeLegibility
+  font-variant-ligatures: none
+  -webkit-font-variant-ligatures: none
+  -webkit-text-size-adjust: 100%
+  position: relative
+
+.background
+  position: fixed !important
+  top: 0
+  left: 0
+  opacity: 0 !important
+  bottom: auto
+  right: 0
+  width: 100%
+  height: 100%
+  z-index: -1
+  background-size: cover
+  background-position: center !important
+  background-color: #141414 !important
+  transition: opacity .5s ease-in-out
+  &.-active
+    opacity: 1 !important
+
+.flashbg
+  animation: flash ease-out 7s infinite
+  width: 100%
+  height: 100%
+  position: fixed !important
+  overflow: hidden
+  background-position: center !important
+  background-size: cover
+  background-repeat: no-repeat
+  filter: brightness(3)
+  top: 0
+  left: 0
+  z-index: -1
+  div
+    height: 100%
+
+@keyframes flash
+  from
+    opacity: 0
+
+  92%
+    opacity: 0
+
+  93%
+    opacity: 0.6
+
+  94%
+    opacity: 0.2
+
+  96%
+    opacity: 1
+
+  to
+    opacity: 0
+
+.main-box
+  display: flex
+  margin-top: 40px
+
+.break
+  @media (min-width: 768px)
+    display: block
+
+#rawic
+  fill: white
+  animation: flash2 ease-out 5s infinite
+  display: block
+  &:hover
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 3
+
+@keyframes glitch
+  0%
+    transform: translate(0)
+    opacity: 1
+    fill: green
+    filter: blur(0)
+
+  20%
+    transform: translate(-2px, 2px)
+    opacity: 0.8
+    fill: #ea075e
+    filter: blur(1px) drop-shadow(0 0 3px white)
+
+  40%
+    transform: translate(-2px, -2px)
+    opacity: 0.8
+    fill: purple
+    filter: blur(0)
+
+  60%
+    transform: translate(2px, 2px)
+    opacity: 0.8
+    fill: pink
+    filter: blur(2px) drop-shadow(0 0 10px white)
+
+  80%
+    transform: translate(2px, -2px)
+    opacity: 0.8
+    fill: #079dfc
+    filter: blur(0)
+
+  to
+    transform: translate(0)
+    opacity: 1
+    fill: white
+    filter: blur(0)
+
+@keyframes flash2
+  from
+    opacity: 1
+
+  92%
+    opacity: 1
+
+  93%
+    opacity: 0.2
+
+  94%
+    opacity: 0.6
+
+  96%
+    opacity: 0
+
+  to
+    opacity: 1
+
+
+a
+  text-decoration: none
+
+p
+  line-height: 1.7
+
+button
+  cursor: pointer
+
+ul
+  list-style: none
+  padding-left: 0
+
+main
+  margin-top: auto
+  opacity: 0 !important
+  &:focus
+    outline: none
+  &.active
+    opacity: 1 !important
+    transition: opacity 0.5s ease-in-out
+
+.gradient-text
+  display: inline-block
+  background: #01a2ff
+  background: -moz-linear-gradient(left, #01a2ff 0%, #ff0061 100%)
+  background: -webkit-linear-gradient(left, #01a2ff 0%, #ff0061 100%)
+  background: linear-gradient(to right, #01a2ff 0%, #ff0061 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01a2ff', endColorstr='#ff0061',GradientType=1 )
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+
+.tooltip
+  position: relative
+  border: 0
+  background-color: transparent
+  padding: 0
+  @media (max-width: 749px)
+    position: fixed
+    bottom: 7rem
+    right: 3rem
+
+  &:focus
+    outline: none
+  &.-left
+    &::before
+      top: 50%
+      bottom: 50%
+      left: -7px
+      margin-top: -6px
+      border-left-color: #1b1f23
+    &::after
+      right: 100%
+      bottom: 50%
+      margin-right: 6px
+      transform: translateY(50%)
+  &::before
+    z-index: 1000001
+    width: 0
+    height: 0
+    color: #1b1f23
+    content: ""
+    border: 6px solid transparent
+  &::before, &::after
+    position: absolute
+    display: none
+    pointer-events: none
+    opacity: 0
+  &::after
+    z-index: 1000000
+    padding: .5em .75em
+    font: normal normal 11px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif
+    -webkit-font-smoothing: subpixel-antialiased
+    color: #fff
+    text-align: center
+    text-decoration: none
+    text-shadow: none
+    text-transform: none
+    letter-spacing: normal
+    word-wrap: break-word
+    white-space: pre
+    content: attr(aria-label)
+    background: #1b1f23
+    border-radius: 3px
+  &.-nojs
+    &:hover
+      &::before, &::after
+        display: inline-block
+        text-decoration: none
+        animation-name: tooltip-appear
+        animation-duration: .1s
+        animation-fill-mode: forwards
+        animation-timing-function: ease-in
+        animation-delay: 0s
+  &.-active
+    &::before, &::after
+      display: inline-block
+      text-decoration: none
+      animation-name: tooltip-appear
+      animation-duration: .1s
+      animation-fill-mode: forwards
+      animation-timing-function: ease-in
+      animation-delay: 0s
+
+@keyframes tooltip-appear
+  0%
+    opacity: 0
+  to
+    opacity: 1
