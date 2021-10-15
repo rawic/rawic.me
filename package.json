@@ -1,7 +1,7 @@
 {
   "name": "rawic-me",
   "private": true,
-  "description": "Rafał Wichowski - official website",
+  "description": "Rafał Wichowski - Front-End Developer",
   "author": "Rafał Wichowski | rawic.me",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",

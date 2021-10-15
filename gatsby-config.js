@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `RAWIC`,
+    title: `RAWIC - Rafał Wichowski | Front-End Developer`,
     description: `Programista Front-End nieustannie poszukujący nowych wyzwań. Ponad 5-letnie doświadczenie w tworzeniu aplikacji internetowych.`,
     author: `RAWIC - Rafał Wichowski`,
     image: `src/images/icon.png`,
-    url: ``
+    url: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        defaultQuality: 100
+        defaultQuality: 100,
       },
     },
     {
@@ -38,9 +38,9 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
