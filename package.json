@@ -30,6 +30,7 @@
     "gatsby-react-router-scroll": "^6.4.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-transformer-sharp": "^5.4.0",
+    "gbimage-bridge": "^0.2.2",
     "global": "^4.4.0",
     "helmet": "^6.0.1",
     "i18next": "^22.4.9",

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import BackgroundImage from "gatsby-background-image";
+import { convertToBgImage } from "gbimage-bridge";
 
 const Background = (props) => {
   useEffect(() => {
@@ -34,14 +36,18 @@ const Background = (props) => {
     currentPage = "home";
   }
 
+  const image = getImage(data[currentPage]);
+  const bgImage = convertToBgImage(image);
+
   return (
     <React.Fragment>
       <BackgroundImage
         className="background"
-        image={data[currentPage].childImageSharp.fullWidth}
+        {...bgImage}
+        preserveStackingContext
       />
       <div className="flashbg">
-        <BackgroundImage image={data[currentPage].childImageSharp.fullWidth} />
+        <BackgroundImage {...bgImage} preserveStackingContext />
       </div>
     </React.Fragment>
   );
