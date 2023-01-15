@@ -10,8 +10,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-layout`,
-    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,6 +18,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -36,9 +35,17 @@ module.exports = {
         theme_color: `#111111`,
         display: `fullscreen`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        cache_busting_mode: "none",
       },
     },
-    'gatsby-plugin-offline',
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/icon-path*"],
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

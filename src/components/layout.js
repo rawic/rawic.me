@@ -1,20 +1,21 @@
-import React from "react"
-import Particles from "react-particles-js"
+import React from "react";
+import Particles from "react-particles";
 
-import "../styles/normalize.css"
-import Effects from "../components/effects"
-import Menu from "../components/menu"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import layoutStyles from "../components/layout.module.sass"
-import Background from "../components/background"
+import "../styles/normalize.css";
+import Effects from "../components/effects";
+import Menu from "../components/menu";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import * as layoutStyles from "../components/layout.module.sass";
+import Background from "../components/background";
 
 const Layout = (props) => {
-  if (props.location.pathname === '/offline-plugin-app-shell-fallback') return null
+  if (props.location.pathname === "/offline-plugin-app-shell-fallback")
+    return null;
 
   return (
     <React.Fragment>
-      <Background page={props.location.pathname.replace(/-|\//g,'')}/>
+      <Background page={props.location.pathname.replace(/-|\//g, "")} />
       <Effects />
       <Particles
         className={layoutStyles.particlesJs}
@@ -93,7 +94,7 @@ const Layout = (props) => {
               onresize: {
                 enable: true,
                 density_auto: true,
-                density_area: 400
+                density_area: 400,
               },
               onhover: {
                 enable: false,
@@ -144,7 +145,7 @@ const Layout = (props) => {
         <Footer />
       </div>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

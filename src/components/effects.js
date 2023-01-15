@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import effectStyles from "./effects.module.sass"
+import React, { Component } from "react";
+import * as effectStyles from "./effects.module.sass";
 
 class Effects extends Component {
   render() {
@@ -11,8 +11,8 @@ class Effects extends Component {
           <div className={`${effectStyles.fog} ${effectStyles.Second}`} />
         </div>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default Effects
+export default Effects;
