@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
-import { convertToBgImage } from "gbimage-bridge"
+import { convertToBgImage } from "gbimage-bridge";
 
 const Background = (props) => {
-  const bgRef = useRef()
+  const bgRef = useRef();
 
   const data = useStaticQuery(graphql`
     {
@@ -23,7 +23,6 @@ const Background = (props) => {
           fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
-          
         }
       }
       personalprojects: file(relativePath: { eq: "personal-background.jpg" }) {
@@ -38,9 +37,8 @@ const Background = (props) => {
   `);
 
   const currentPage = props.page || "home";
-  console.log(currentPage, 'currentPage');
   const image = getImage(data[currentPage]);
-  const imageData = data[currentPage].childImageSharp.fluid
+  const imageData = data[currentPage].childImageSharp.fluid;
 
   return (
     <React.Fragment>

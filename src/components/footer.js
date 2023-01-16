@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation("translation");
+  const { t } = useTranslation();
   const [isMsgVisible, setIsMsgVisible] = useState(false);
 
   return (

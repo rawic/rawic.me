@@ -9,7 +9,7 @@ import * as stylesSocialMedia from "./social-media.module.sass";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const SocialMedia = () => {
-  const { t } = useTranslation("translation", {
+  const { t } = useTranslation("", {
     keyPrefix: "social",
   });
 

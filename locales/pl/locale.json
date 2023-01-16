@@ -1,13 +1,13 @@
 {
-  "copied": "Copied",
+  "copied": "Skopiowano",
   "navigation": {
-    "greetings": "Greetings",
+    "greetings": "Cześć",
     "portfolio": "Portfolio",
-    "my-projects": "My projects",
+    "my-projects": "Moje projekty",
     "cv": "Curriculum vitae"
   },
   "footer": {
-    "designs": "Designs"
+    "designs": "Projekty"
   },
   "social": {
     "github": "GitHub profile",

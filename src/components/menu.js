@@ -7,7 +7,7 @@ import { faUser, faLaughBeam } from "@fortawesome/free-regular-svg-icons";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const Menu = () => {
-  const { t } = useTranslation("translation", {
+  const { t } = useTranslation("", {
     keyPrefix: "navigation",
   });
 

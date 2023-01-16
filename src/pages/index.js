@@ -5,11 +5,11 @@ import Home from "../components/home";
 import "../styles/main.sass";
 import Layout from "../components/layout";
 import { useEffect } from "react";
-import {graphql} from 'gatsby';
+import { graphql } from "gatsby";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const IndexPage = (props) => {
-  const { t } = useTranslation('', { returnObjects: true  });
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -18,11 +18,6 @@ const IndexPage = (props) => {
 
     return () => clearTimeout(timeoutId);
   }, []);
-
-  const thanks = t("navigation.greetings");
-  const homee = t("navigation");
-
-  console.log(homee, 'homeeeeee');
 
   return (
     <Layout location={props.location}>
@@ -36,7 +31,7 @@ export default IndexPage;
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns

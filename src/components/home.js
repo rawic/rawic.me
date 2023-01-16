@@ -6,9 +6,9 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("", { keyPrefix: "home" });
 
-  const thanks = t("home.cv.thanks");
+  const thanks = t("cv.thanks");
 
   return (
     <div className="main-box">
@@ -23,7 +23,7 @@ const Home = () => {
       <article className={homeStyles.articleBox}>
         <header className={`${homeStyles.articleHeader} gradient-text`}>
           <h2 className={`${homeStyles.title}`}>
-            <span className={`${homeStyles.me}`}>{t("home.heading")}</span>
+            <span className={`${homeStyles.me}`}>{t("heading")}</span>
             {t("subheading.part-1")}
             <span className="s-white">{t("subheading.warsaw.part-1")}</span>
             <span className="s-red">{t("subheading.warsaw.part-2")}</span>,

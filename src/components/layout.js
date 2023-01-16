@@ -10,19 +10,23 @@ import * as layoutStyles from "../components/layout.module.sass";
 import Background from "../components/background";
 import { useCallback } from "react";
 import { loadFull } from "tsparticles";
+import { I18nextContext } from "gatsby-plugin-react-i18next";
 
 const Layout = (props) => {
-  const particlesInit = useCallback(async engine => {
-    await loadFull(engine);
-}, []);
+  const context = React.useContext(I18nextContext);
+  const originalPath = context.originalPath;
 
-  if (props.location.pathname === "/offline-plugin-app-shell-fallback") {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
+  if (originalPath === "/offline-plugin-app-shell-fallback") {
     return null;
   }
 
   return (
     <React.Fragment>
-      <Background page={props.location.pathname.replace(/\/(en|pl)\/(.*)/g, "")} />
+      <Background page={originalPath.replace(/-|\//g, "")} />
       <Effects />
       <Particles
         id="tsparticles"
@@ -43,19 +47,19 @@ const Layout = (props) => {
               },
             },
             opacity: {
-              value: {min: 0.1, max: 1},
+              value: { min: 0.1, max: 1 },
               animation: {
                 enable: true,
-                speed: {min: 0.1, max: 3},
+                speed: { min: 0.1, max: 3 },
                 sync: false,
               },
             },
             size: {
-              value: {min: 1, max: 2},
+              value: { min: 1, max: 2 },
             },
             move: {
               enable: true,
-              speed: {min: 0.1, max: 2},
+              speed: { min: 0.1, max: 2 },
               direction: "none",
               random: true,
               straight: false,

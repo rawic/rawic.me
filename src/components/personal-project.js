@@ -6,10 +6,10 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import * as personalProjectStyles from "../components/personal-project.module.sass";
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import { getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image";
 
 const Project = (props) => {
-  const { t } = useTranslation("translation", {
+  const { t } = useTranslation("", {
     keyPrefix: "personal-projects",
   });
 
@@ -31,8 +31,6 @@ const Project = (props) => {
   `);
 
   const image = getImage(data[props.slug]);
-
-  console.log(t, 't');
 
   return (
     <article className={personalProjectStyles.personalProject}>

@@ -8,11 +8,10 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { useEffect } from "react";
 import Layout from "../components/layout";
-import {graphql} from 'gatsby';
-
+import { graphql } from "gatsby";
 
 const PortfolioPage = (props) => {
-  const { t } = useTranslation("translation", {
+  const { t } = useTranslation("", {
     keyPrefix: "portfolio",
   });
 
@@ -110,7 +109,7 @@ export default PortfolioPage;
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns

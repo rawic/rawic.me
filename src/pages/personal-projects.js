@@ -7,10 +7,10 @@ import Project from "../components/personal-project";
 import { useEffect } from "react";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/layout";
-import {graphql} from 'gatsby';
+import { graphql } from "gatsby";
 
 const PersonalProjectsPage = (props) => {
-  const { t } = useTranslation("translation", {
+  const { t } = useTranslation("", {
     keyPrefix: "personal-projects",
   });
 
@@ -25,8 +25,8 @@ const PersonalProjectsPage = (props) => {
   return (
     <Layout location={props.location}>
       <Seo
-          title={`🤓 ${t("seo-title")}`}
-          url="https://rawic.me/personal-projects/"
+        title={`🤓 ${t("seo-title")}`}
+        url="https://rawic.me/personal-projects/"
       />
       <div className="main-box">
         <div className={homeStyles.arrowsBox}>
@@ -73,7 +73,7 @@ export default PersonalProjectsPage;
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
