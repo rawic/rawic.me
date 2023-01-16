@@ -4,7 +4,7 @@ import * as menuStyles from "./menu.module.sass";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDesktop, faPaperclip } from "@fortawesome/free-solid-svg-icons";
 import { faUser, faLaughBeam } from "@fortawesome/free-regular-svg-icons";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const Menu = () => {
   const { t } = useTranslation("translation", {

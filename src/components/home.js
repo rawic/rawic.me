@@ -3,14 +3,12 @@ import * as homeStyles from "./home.module.sass";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const Home = () => {
-  const { t } = useTranslation("translation", {
-    keyPrefix: "home",
-  });
+  const { t } = useTranslation();
 
-  const thanks = t("cv.thanks");
+  const thanks = t("home.cv.thanks");
 
   return (
     <div className="main-box">
@@ -25,7 +23,7 @@ const Home = () => {
       <article className={homeStyles.articleBox}>
         <header className={`${homeStyles.articleHeader} gradient-text`}>
           <h2 className={`${homeStyles.title}`}>
-            <span className={`${homeStyles.me}`}>{t("heading")}</span>
+            <span className={`${homeStyles.me}`}>{t("home.heading")}</span>
             {t("subheading.part-1")}
             <span className="s-white">{t("subheading.warsaw.part-1")}</span>
             <span className="s-red">{t("subheading.warsaw.part-2")}</span>,

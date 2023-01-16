@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import * as personalProjectStyles from "../components/personal-project.module.sass";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
+import { getImage } from "gatsby-plugin-image"
 
 const Project = (props) => {
   const { t } = useTranslation("translation", {
@@ -29,10 +30,14 @@ const Project = (props) => {
     }
   `);
 
+  const image = getImage(data[props.slug]);
+
+  console.log(t, 't');
+
   return (
     <article className={personalProjectStyles.personalProject}>
       <figure className={personalProjectStyles.image}>
-        <GatsbyImage image={data[props.slug].childImageSharp.fullWidth} />
+        <GatsbyImage image={image} alt="" />
       </figure>
       <div className={personalProjectStyles.content}>
         <header>

@@ -1,0 +1,71 @@
+{
+    "Test": "eeeeeeeeee",
+    "copied": "Copied",
+    "navigation": {
+        "greetings": "Greetings",
+        "portfolio": "Portfolio",
+        "my-projects": "My projects",
+        "cv": "Curriculum vitae"
+    },
+    "footer": {
+        "designs": "Designs"
+    },
+    "social": {
+        "github": "GitHub profile",
+        "invision": "inVision profile",
+        "linkedin": "LinkedIn profile"
+    },
+    "home": {
+        "heading": "Hello, my name is Rafał.",
+        "subheading": {
+            "part-1": "I am a programmer from ",
+            "warsaw": {
+                "part-1": "War",
+                "part-2": "saw"
+            },
+            "part-2": "currently seeking new challenges."
+        },
+        "about": {
+            "heading": "About me",
+            "description": "I specialize in\u00A0implementing Front-End solutions, but I\u00A0am ambitious in\u00A0becoming well-rounded in\u00A0the\u00A0IT industry. I have several years of experience in building web applications, designing UI, and\u00A0have a\u00A0basic understanding of UX.",
+            "description-2": "I am capable of\u00A0working independently and\u00A0as part of\u00A0a\u00A0team. I am always willing to\u00A0help others and\u00A0enjoy learning, sharing knowledge, and\u00A0listening attentively. Regardless of\u00A0the\u00A0challenge, I strive to\u00A0achieve a\u00A0perfect product with appropriate performance, usability, and\u00A0accessibility. I\u00A0work intelligently to achieve this."
+        },
+        "experience": {
+            "heading": {
+                "part-1": "I have been in the industry continuously ",
+                "part-2": "since 2012"
+            }
+        },
+        "cv": {
+            "title": "Get CV",
+            "data": "Get CV",
+            "thanks": "Thank\u00A0you"
+        }
+    },
+    "portfolio": {
+        "heading": "Some projects I have participated in",
+        "description": {
+            "part-1": "Participating in the development of\u00A0the\u00A0following applications",
+            "part-2": "was a\u00A0great pleasure for\u00A0me."
+        }
+    },
+    "personal-projects": {
+        "seo-title": "Personal Projects",
+        "heading": "# A few projects that I am currently working on",
+        "description": {
+            "part-1": "In my free time, I try to implement my own ideas ",
+            "part-2": "and I am happy to share them with others."
+        },
+        "featured": "Featured project",
+        "projects": {
+            "project-1": {
+                "title": "Root Wood Studio",
+                "description": "One of my first ideas implemented after hours. An online store for desks for the most demanding customers."
+            },
+            "project-2": {
+                "title": "Dribbi",
+                "description": "An application that tracks the duration of performed operations. Similar to the Toggl app, but fully free and with slightly different features."
+            }
+        }
+    }
+}

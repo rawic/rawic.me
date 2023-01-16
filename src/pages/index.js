@@ -3,31 +3,14 @@ import React from "react";
 import Seo from "../components/seo";
 import Home from "../components/home";
 import "../styles/main.sass";
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import en from "../i18n/en.json";
-import pl from "../i18n/pl.json";
 import Layout from "../components/layout";
 import { useEffect } from "react";
-
-const defaultLanguage = "en";
-i18n.use(initReactI18next).init({
-  resources: {
-    en: {
-      translation: en,
-    },
-    pl: {
-      translation: pl,
-    },
-  },
-  fallbackLng: defaultLanguage,
-  lng: defaultLanguage,
-  interpolation: {
-    escapeValue: false,
-  },
-});
+import {graphql} from 'gatsby';
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const IndexPage = (props) => {
+  const { t } = useTranslation('', { returnObjects: true  });
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       document.querySelector("main").className = "active";
@@ -35,6 +18,11 @@ const IndexPage = (props) => {
 
     return () => clearTimeout(timeoutId);
   }, []);
+
+  const thanks = t("navigation.greetings");
+  const homee = t("navigation");
+
+  console.log(homee, 'homeeeeee');
 
   return (
     <Layout location={props.location}>
@@ -45,3 +33,17 @@ const IndexPage = (props) => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

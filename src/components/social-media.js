@@ -6,7 +6,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import * as stylesSocialMedia from "./social-media.module.sass";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const SocialMedia = () => {
   const { t } = useTranslation("translation", {

@@ -1,53 +1,58 @@
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import BackgroundImage from "gatsby-background-image";
-import { convertToBgImage } from "gbimage-bridge";
+import { convertToBgImage } from "gbimage-bridge"
 
 const Background = (props) => {
-  useEffect(() => {
-    document.querySelector(".background")?.classList.add("-active");
-  }, []);
+  const bgRef = useRef()
 
   const data = useStaticQuery(graphql`
     {
       home: file(relativePath: { eq: "home-background2.jpg" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(placeholder: BLURRED)
+          fluid(quality: 100, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
         }
       }
       portfolio: file(relativePath: { eq: "projects-background.jpg" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(placeholder: BLURRED)
+          fluid(quality: 100, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+          
         }
       }
       personalprojects: file(relativePath: { eq: "personal-background.jpg" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(placeholder: BLURRED)
+          fluid(quality: 100, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
         }
       }
     }
   `);
 
-  let currentPage;
-  if (props.page === "portfolio" || props.page === "personalprojects") {
-    currentPage = props.page;
-  } else {
-    currentPage = "home";
-  }
-
+  const currentPage = props.page || "home";
+  console.log(currentPage, 'currentPage');
   const image = getImage(data[currentPage]);
-  const bgImage = convertToBgImage(image);
+  const imageData = data[currentPage].childImageSharp.fluid
 
   return (
     <React.Fragment>
       <BackgroundImage
         className="background"
-        {...bgImage}
+        ref={bgRef}
+        onLoad={() => bgRef.current?.selfRef.classList.add("-active")}
+        fluid={imageData}
         preserveStackingContext
       />
       <div className="flashbg">
-        <BackgroundImage {...bgImage} preserveStackingContext />
+        <BackgroundImage fluid={imageData} preserveStackingContext />
       </div>
     </React.Fragment>
   );

@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import Project from "../components/personal-project";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/layout";
+import {graphql} from 'gatsby';
 
 const PersonalProjectsPage = (props) => {
   const { t } = useTranslation("translation", {
@@ -23,51 +24,63 @@ const PersonalProjectsPage = (props) => {
 
   return (
     <Layout location={props.location}>
-      <section>
-        <Seo
+      <Seo
           title={`🤓 ${t("seo-title")}`}
           url="https://rawic.me/personal-projects/"
-        />
-        <div className="main-box">
-          <div className={homeStyles.arrowsBox}>
-            <button type="button" aria-hidden="true">
-              <FontAwesomeIcon icon={faChevronUp} />
-            </button>
-            <button type="button" aria-hidden="true">
-              <FontAwesomeIcon icon={faChevronDown} />
-            </button>
-          </div>
-          <article className={homeStyles.articleBox}>
-            <header className={`${homeStyles.articleHeader} gradient-text`}>
-              <span className={`${homeStyles.me}`}>{t("heading")}</span>
-              <h2 className={`${homeStyles.title}`}>
-                {t("description.part-1")}
-                <span className="break">{t("description.part-2")}</span>
-              </h2>
-            </header>
-            <div className={homeStyles.projectList}>
-              <Project
-                name="Root Wood Studio"
-                slug="rootwoodstudio"
-                description={t("projects.project-1.description")}
-                tags="Photoshop, Illustrator, Balsamiq Mockups"
-                url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362088531"
-                isFeatured
-              />
-              <Project
-                name="Dribbi"
-                slug="dribbi"
-                description={t("projects.project-2.description")}
-                tags="Sass, React, Node.js, Express, MongoDB, Photoshop"
-                url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362091378"
-                isFeatured
-              />
-            </div>
-          </article>
+      />
+      <div className="main-box">
+        <div className={homeStyles.arrowsBox}>
+          <button type="button" aria-hidden="true">
+            <FontAwesomeIcon icon={faChevronUp} />
+          </button>
+          <button type="button" aria-hidden="true">
+            <FontAwesomeIcon icon={faChevronDown} />
+          </button>
         </div>
-      </section>
+        <article className={homeStyles.articleBox}>
+          <header className={`${homeStyles.articleHeader} gradient-text`}>
+            <span className={`${homeStyles.me}`}>{t("heading")}</span>
+            <h2 className={`${homeStyles.title}`}>
+              {t("description.part-1")}
+              <span className="break">{t("description.part-2")}</span>
+            </h2>
+          </header>
+          <div className={homeStyles.projectList}>
+            <Project
+              name="Root Wood Studio"
+              slug="rootwoodstudio"
+              description={t("projects.project-1.description")}
+              tags="Photoshop, Illustrator, Balsamiq Mockups"
+              url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362088531"
+              isFeatured
+            />
+            <Project
+              name="Dribbi"
+              slug="dribbi"
+              description={t("projects.project-2.description")}
+              tags="Sass, React, Node.js, Express, MongoDB, Photoshop"
+              url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362091378"
+              isFeatured
+            />
+          </div>
+        </article>
+      </div>
     </Layout>
   );
 };
 
 export default PersonalProjectsPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

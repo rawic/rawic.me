@@ -5,7 +5,7 @@ import * as footerStyles from "./footer.module.sass";
 import SocialMedia from "./social-media";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const Footer = () => {
   const { t } = useTranslation("translation");

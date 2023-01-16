@@ -2,6 +2,7 @@ import React from "react";
 
 import Seo from "../components/seo";
 import Layout from "../components/layout";
+import {graphql} from 'gatsby';
 
 const NotFoundPage = (props) => (
   <Layout location={props.location}>
@@ -12,3 +13,17 @@ const NotFoundPage = (props) => (
 );
 
 export default NotFoundPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

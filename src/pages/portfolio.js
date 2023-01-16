@@ -5,9 +5,11 @@ import Project from "../components/portfolio-project";
 import * as homeStyles from "../components/home.module.sass";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import { useEffect } from "react";
 import Layout from "../components/layout";
+import {graphql} from 'gatsby';
+
 
 const PortfolioPage = (props) => {
   const { t } = useTranslation("translation", {
@@ -105,3 +107,17 @@ const PortfolioPage = (props) => {
 };
 
 export default PortfolioPage;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
