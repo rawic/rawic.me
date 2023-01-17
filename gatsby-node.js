@@ -1,9 +1,8 @@
-// exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
-//   const config = getConfig()
-//   if (stage.startsWith('develop') && config.resolve) {
-//     config.resolve.alias = {
-//       ...config.resolve.alias,
-//       'react-dom': '@hot-loader/react-dom'
-//     }
-//   }
-// }
+exports.onCreateBabelConfig = ({ actions }) => {
+    actions.setBabelPreset({
+        name: 'babel-preset-gatsby',
+        options: {
+            reactRuntime: 'automatic',
+        },
+    });
+};
