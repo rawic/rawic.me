@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import BackgroundImage from 'gatsby-background-image';
 import { BackgroundProps } from './Background.types';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage } from 'gbimage-bridge';
 
 export const Background = (props: BackgroundProps) => {
     const bgRef = useRef<any>(null);
@@ -11,47 +13,40 @@ export const Background = (props: BackgroundProps) => {
         {
             home: file(relativePath: { eq: "home-background2.jpg" }) {
                 childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
-                    fluid(quality: 100, maxWidth: 1920) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 100)
                 }
             }
             portfolio: file(relativePath: { eq: "projects-background.jpg" }) {
                 childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
-                    fluid(quality: 100, maxWidth: 1920) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 100)
                 }
             }
             personalprojects: file(relativePath: { eq: "personal-background.jpg" }) {
                 childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED)
-                    fluid(quality: 100, maxWidth: 1920) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 100)
                 }
             }
         }
     `);
 
     const currentPage = props.page || 'home';
-    const imageData = data[currentPage].childImageSharp.fluid;
+    const imageData = data[currentPage].childImageSharp.gatsbyImageData;
+    const image = getImage(imageData);
+    const bgImage = convertToBgImage(image);
 
     return (
-        <React.Fragment>
+        <>
             <BackgroundImage
                 Tag="div"
                 className="background"
                 ref={bgRef}
                 onLoad={() => bgRef.current?.selfRef?.classList.add('-active')}
-                fluid={imageData}
+                {...bgImage}
                 preserveStackingContext
             />
             <div className="flashbg">
-                <BackgroundImage fluid={imageData} preserveStackingContext />
+                <BackgroundImage {...bgImage} preserveStackingContext />
             </div>
-        </React.Fragment>
+        </>
     );
 };

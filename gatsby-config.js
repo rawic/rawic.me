@@ -7,6 +7,7 @@ module.exports = {
         description: `Programista Front-End nieustannie poszukujący nowych wyzwań. Ponad 5-letnie doświadczenie w tworzeniu aplikacji internetowych.`,
         author: `RAWIC - Rafał Wichowski`,
         image: `src/images/icon.png`,
+        siteUrl: `https://rawic.me`,
         url: `https://rawic.me`,
     },
     plugins: [
@@ -23,6 +24,7 @@ module.exports = {
                 extensions: ['tsx', 'ts', 'sass'],
             },
         },
+        `gatsby-plugin-sitemap`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-styled-components`,
         {
@@ -56,45 +58,35 @@ module.exports = {
                 background_color: `#111111`,
                 theme_color: `#111111`,
                 display: `fullscreen`,
-                icon: `src/images/icon.png`, // This path is relative to the root of the site.
+                icon: `./src/images/icon.png`, // This path is relative to the root of the site.
                 cache_busting_mode: 'none',
             },
         },
         {
             resolve: `gatsby-plugin-react-i18next`,
             options: {
+                localeJsonSourceName: `locale`,
                 languages,
                 defaultLanguage,
                 siteUrl: `http://localhost:8000/`,
                 i18nextOptions: {
                     fallbackLng: defaultLanguage,
                     supportedLngs: languages,
-                    defaultNS: 'common',
                     interpolation: {
                         escapeValue: false,
                     },
                 },
-                pages: [
-                    {
-                        matchPath: '/:lang?/blog/:uid',
-                        getLanguageFromPath: true,
-                        excludeLanguages: ['es'],
-                    },
-                    {
-                        matchPath: '/',
-                        languages: ['en'],
-                    },
-                ],
             },
         },
         {
-            resolve: 'gatsby-plugin-offline',
+            resolve: 'gatsby-plugin-robots-txt',
             options: {
-                workboxConfig: {
-                    globPatterns: ['**/icon-path*'],
-                },
+                host: 'https://rawic.me/',
+                sitemap: 'https://rawic.me/sitemap.xml',
+                policy: [{ userAgent: '*', allow: '/' }],
             },
         },
+        `gatsby-plugin-offline`,
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

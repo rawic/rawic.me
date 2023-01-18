@@ -1,5 +1,4 @@
-import { Link } from 'gatsby';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useTranslation, Link } from 'gatsby-plugin-react-i18next';
 
 import { faLaughBeam, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faDesktop, faPaperclip } from '@fortawesome/free-solid-svg-icons';
