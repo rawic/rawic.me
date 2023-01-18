@@ -14,45 +14,43 @@ const PersonalProjectsPage = (props) => {
     });
 
     return (
-        <Layout location={props.location}>
-            <div className="main-box">
-                <div className={homeStyles.arrowsBox}>
-                    <button type="button" aria-hidden="true">
-                        <FontAwesomeIcon icon={faChevronUp} />
-                    </button>
-                    <button type="button" aria-hidden="true">
-                        <FontAwesomeIcon icon={faChevronDown} />
-                    </button>
-                </div>
-                <article className={homeStyles.articleBox}>
-                    <header className={`${homeStyles.articleHeader} gradient-text`}>
-                        <span className={`${homeStyles.me}`}>{t('heading')}</span>
-                        <h2 className={`${homeStyles.title}`}>
-                            {t('description.part-1')}
-                            <span className="break">{t('description.part-2')}</span>
-                        </h2>
-                    </header>
-                    <div className={homeStyles.projectList}>
-                        <PersonalProject
-                            name="Root Wood Studio"
-                            slug="rootwoodstudio"
-                            description={t('projects.project-1.description')}
-                            tags="Photoshop, Illustrator, Balsamiq Mockups"
-                            url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362088531"
-                            isFeatured
-                        />
-                        <PersonalProject
-                            name="Dribbi"
-                            slug="dribbi"
-                            description={t('projects.project-2.description')}
-                            tags="Sass, React, Node.js, Express, MongoDB, Photoshop"
-                            url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362091378"
-                            isFeatured
-                        />
-                    </div>
-                </article>
+        <div className="main-box">
+            <div className={homeStyles.arrowsBox}>
+                <button type="button" aria-hidden="true">
+                    <FontAwesomeIcon icon={faChevronUp} />
+                </button>
+                <button type="button" aria-hidden="true">
+                    <FontAwesomeIcon icon={faChevronDown} />
+                </button>
             </div>
-        </Layout>
+            <article className={homeStyles.articleBox}>
+                <header className={`${homeStyles.articleHeader} gradient-text`}>
+                    <span className={`${homeStyles.me}`}>{t('heading')}</span>
+                    <h2 className={`${homeStyles.title}`}>
+                        {t('description.part-1')}
+                        <span className="break">{t('description.part-2')}</span>
+                    </h2>
+                </header>
+                <div className={homeStyles.projectList}>
+                    <PersonalProject
+                        name="Root Wood Studio"
+                        slug="rootwoodstudio"
+                        description={t('projects.project-1.description')}
+                        tags="Photoshop, Illustrator, Balsamiq Mockups"
+                        url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362088531"
+                        isFeatured
+                    />
+                    <PersonalProject
+                        name="Dribbi"
+                        slug="dribbi"
+                        description={t('projects.project-2.description')}
+                        tags="Sass, React, Node.js, Express, MongoDB, Photoshop"
+                        url="https://projects.invisionapp.com/share/CZQAF2DKATX#/screens/362091378"
+                        isFeatured
+                    />
+                </div>
+            </article>
+        </div>
     );
 };
 

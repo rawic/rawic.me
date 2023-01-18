@@ -8,11 +8,7 @@ import { Layout } from '@layouts';
 
 import type { PageProps } from 'gatsby';
 const IndexPage = (props: PageProps) => {
-    return (
-        <Layout location={props.location}>
-            <Home />
-        </Layout>
-    );
+    return <Home />;
 };
 
 export default IndexPage;

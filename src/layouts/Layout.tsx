@@ -9,10 +9,38 @@ import { Background, Effects, Footer, Header, Menu } from '@components';
 
 import * as layoutStyles from './layout.module.sass';
 import { LayoutProps } from './Layout.types';
+import i18next from 'i18next';
+import * as ReactI18next from 'react-i18next';
+import { useI18next } from 'gatsby-plugin-react-i18next';
+
+export const AlternateLinksContext = React.createContext([]);
+
+export function wrapWithI18nProvider({ element, props }) {
+    const i18n = i18next
+        .createInstance({
+            lng: props.pageContext.language,
+            interpolation: { escapeValue: false },
+            initImmediate: false,
+            resources: props.pageContext.i18nResources,
+        })
+        .use(ReactI18next.initReactI18next);
+    // noinspection JSIgnoredPromiseFromCall
+    i18n.init();
+    return (
+        <ReactI18next.I18nextProvider i18n={i18n}>
+            <AlternateLinksContext.Provider
+                value={props.pageContext && props.pageContext.alternateLinks}
+            >
+                <Layout {...props}>{element}</Layout>
+            </AlternateLinksContext.Provider>
+        </ReactI18next.I18nextProvider>
+    );
+}
 
 export const Layout = (props: LayoutProps) => {
-    const context = React.useContext(I18nextContext);
-    const originalPath = context.originalPath;
+    const { languages, originalPath, t, i18n } = useI18next();
+
+    console.log(languages, originalPath);
 
     const particlesInit = useCallback(async (engine) => {
         await loadFull(engine);
@@ -23,7 +51,7 @@ export const Layout = (props: LayoutProps) => {
     }
 
     return (
-        <React.Fragment>
+        <>
             <Background page={originalPath.replace(/-|\//g, '')} />
             <Effects />
             <Particles
@@ -104,6 +132,6 @@ export const Layout = (props: LayoutProps) => {
                 </div>
                 <Footer />
             </div>
-        </React.Fragment>
+        </>
     );
 };

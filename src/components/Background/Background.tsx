@@ -8,6 +8,7 @@ import { convertToBgImage } from 'gbimage-bridge';
 
 export const Background = (props: BackgroundProps) => {
     const bgRef = useRef<any>(null);
+    console.log(props, 'props');
 
     const data = useStaticQuery(graphql`
         {
