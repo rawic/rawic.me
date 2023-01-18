@@ -1,5 +1,3 @@
-import { graphql } from 'gatsby';
-
 import { SEO } from '@components';
 
 const NotFoundPage = () => (
@@ -12,17 +10,3 @@ const NotFoundPage = () => (
 export default NotFoundPage;
 
 export const Head = () => <SEO title="404: Not found" />;
-
-// export const query = graphql`
-//     query ($language: String!) {
-//         locales: allLocale(filter: { language: { eq: $language } }) {
-//             edges {
-//                 node {
-//                     ns
-//                     data
-//                     language
-//                 }
-//             }
-//         }
-//     }
-// `;

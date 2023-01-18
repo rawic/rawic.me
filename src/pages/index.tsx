@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 
 import { SEO } from '@components';
 import { Home } from '@features';
-import { Layout } from '@layouts';
 
 import type { PageProps } from 'gatsby';
 const IndexPage = (props: PageProps) => {

@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useEffect } from 'react';
 
 import { SEO } from '@components';
 import { PortfolioProject } from '@features';
@@ -7,15 +9,21 @@ import * as homeStyles from '@features/Home/home.module.sass';
 import * as stylesPortfolio from '@features/PortfolioProject/portfolio.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Layout } from '@layouts';
 
-const PortfolioPage = (props) => {
+const PortfolioPage = () => {
     const { t } = useTranslation('', {
         keyPrefix: 'portfolio',
     });
 
     return (
-        <Layout location={props.location}>
+        <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+                ease: 'linear',
+                duration: 0.5,
+            }}
+        >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
                     <button type="button" aria-hidden="true">
@@ -91,7 +99,7 @@ const PortfolioPage = (props) => {
                     </ul>
                 </article>
             </div>
-        </Layout>
+        </motion.main>
     );
 };
 

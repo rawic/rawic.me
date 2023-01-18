@@ -1,14 +1,24 @@
-import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
-
 import BackgroundImage from 'gatsby-background-image';
-import { BackgroundProps } from './Background.types';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
+import React, { useEffect, useRef } from 'react';
+
+import { BackgroundProps } from './Background.types';
 
 export const Background = (props: BackgroundProps) => {
     const bgRef = useRef<any>(null);
-    console.log(props, 'props');
+    const flashRef = useRef<any>(null);
+
+    console.log(props, 'asd');
+
+    // add class to flashRef element every time bgRef changes
+    // useEffect(() => {
+    //     if (flashRef?.current) {
+    //         flashRef.current.classList.add('-run-immediately');
+    //     }
+    // }, [bgRef]);
 
     const data = useStaticQuery(graphql`
         {
@@ -45,9 +55,33 @@ export const Background = (props: BackgroundProps) => {
                 {...bgImage}
                 preserveStackingContext
             />
-            <div className="flashbg">
+            <motion.div
+                className="flashbg"
+                ref={flashRef}
+                initial={{ opacity: 1 }}
+                // animate={{ opacity: 0 }}
+                transition={{
+                    type: 'spring',
+                    // damping: 10,
+                    // stiffness: 200,
+                    bounce: 0.1,
+                    // velocity: 3,
+                    // duration: 0.2,
+                    repeatType: 'reverse',
+                    repeat: 0,
+                }}
+                animate={{
+                    opacity: 0,
+                    filter: 'blur(15px)',
+                    // transitionEnd: {
+                    //     opacity: 0,
+                    // },
+                }}
+                // transition={{ duration: 0.5 }}
+                key={currentPage}
+            >
                 <BackgroundImage {...bgImage} preserveStackingContext />
-            </div>
+            </motion.div>
         </>
     );
 };

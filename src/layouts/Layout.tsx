@@ -1,46 +1,17 @@
 import '../styles/normalize.css';
 
-import { I18nextContext } from 'gatsby-plugin-react-i18next';
-import React, { useCallback } from 'react';
+import { useI18next } from 'gatsby-plugin-react-i18next';
+import { useCallback } from 'react';
 import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
 
-import { Background, Effects, Footer, Header, Menu } from '@components';
+import { Background, BackgroundEffects, Footer, Header, Menu, ThunderEffect } from '@components';
 
 import * as layoutStyles from './layout.module.sass';
 import { LayoutProps } from './Layout.types';
-import i18next from 'i18next';
-import * as ReactI18next from 'react-i18next';
-import { useI18next } from 'gatsby-plugin-react-i18next';
-
-export const AlternateLinksContext = React.createContext([]);
-
-export function wrapWithI18nProvider({ element, props }) {
-    const i18n = i18next
-        .createInstance({
-            lng: props.pageContext.language,
-            interpolation: { escapeValue: false },
-            initImmediate: false,
-            resources: props.pageContext.i18nResources,
-        })
-        .use(ReactI18next.initReactI18next);
-    // noinspection JSIgnoredPromiseFromCall
-    i18n.init();
-    return (
-        <ReactI18next.I18nextProvider i18n={i18n}>
-            <AlternateLinksContext.Provider
-                value={props.pageContext && props.pageContext.alternateLinks}
-            >
-                <Layout {...props}>{element}</Layout>
-            </AlternateLinksContext.Provider>
-        </ReactI18next.I18nextProvider>
-    );
-}
 
 export const Layout = (props: LayoutProps) => {
-    const { languages, originalPath, t, i18n } = useI18next();
-
-    console.log(languages, originalPath);
+    const { originalPath, path } = useI18next();
 
     const particlesInit = useCallback(async (engine) => {
         await loadFull(engine);
@@ -53,7 +24,7 @@ export const Layout = (props: LayoutProps) => {
     return (
         <>
             <Background page={originalPath.replace(/-|\//g, '')} />
-            <Effects />
+            <BackgroundEffects />
             <Particles
                 id="tsparticles"
                 className={layoutStyles.particlesJs}
@@ -124,10 +95,11 @@ export const Layout = (props: LayoutProps) => {
                     detectRetina: true,
                 }}
             />
+            {/* <ThunderEffect path={path} /> */}
             <div className={layoutStyles.pageContainer}>
                 <div className={layoutStyles.pageContent}>
                     <Header />
-                    <main tabIndex="-1">{props.children}</main>
+                    <main>{props.children}</main>
                     <Menu />
                 </div>
                 <Footer />

@@ -6,7 +6,6 @@ import { PersonalProject } from '@features';
 import * as homeStyles from '@features/Home/home.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Layout } from '@layouts';
 
 const PersonalProjectsPage = (props) => {
     const { t } = useTranslation('', {

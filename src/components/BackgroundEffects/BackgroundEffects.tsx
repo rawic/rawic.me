@@ -1,6 +1,6 @@
-import * as effectStyles from './effects.module.sass';
+import * as effectStyles from './backgroundEffects.module.sass';
 
-export const Effects = () => (
+export const BackgroundEffects = () => (
     <>
         <div className={effectStyles.flash} />
         <div className={effectStyles.fogContainer}>
