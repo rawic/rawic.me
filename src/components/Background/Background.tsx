@@ -3,7 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useDidUpdateEffect } from '@hooks';
 
 import { BackgroundProps } from './Background.types';
 
@@ -11,14 +12,19 @@ export const Background = (props: BackgroundProps) => {
     const bgRef = useRef<any>(null);
     const flashRef = useRef<any>(null);
 
-    console.log(props, 'asd');
+    useDidUpdateEffect(() => {
+        if (flashRef?.current) {
+            flashRef.current.classList.add('-run-immediately');
+            const timeout = setTimeout(
+                () => flashRef.current.classList.remove('-run-immediately'),
+                7000,
+            );
 
-    // add class to flashRef element every time bgRef changes
-    // useEffect(() => {
-    //     if (flashRef?.current) {
-    //         flashRef.current.classList.add('-run-immediately');
-    //     }
-    // }, [bgRef]);
+            return () => {
+                clearTimeout(timeout);
+            };
+        }
+    }, [bgRef.current?.selfRef]);
 
     const data = useStaticQuery(graphql`
         {
@@ -55,33 +61,9 @@ export const Background = (props: BackgroundProps) => {
                 {...bgImage}
                 preserveStackingContext
             />
-            <motion.div
-                className="flashbg"
-                ref={flashRef}
-                initial={{ opacity: 1 }}
-                // animate={{ opacity: 0 }}
-                transition={{
-                    type: 'spring',
-                    // damping: 10,
-                    // stiffness: 200,
-                    bounce: 0.1,
-                    // velocity: 3,
-                    // duration: 0.2,
-                    repeatType: 'reverse',
-                    repeat: 0,
-                }}
-                animate={{
-                    opacity: 0,
-                    filter: 'blur(15px)',
-                    // transitionEnd: {
-                    //     opacity: 0,
-                    // },
-                }}
-                // transition={{ duration: 0.5 }}
-                key={currentPage}
-            >
+            <div className="flashbg" ref={flashRef} key={currentPage}>
                 <BackgroundImage {...bgImage} preserveStackingContext />
-            </motion.div>
+            </div>
         </>
     );
 };

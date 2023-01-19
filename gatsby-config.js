@@ -20,6 +20,7 @@ module.exports = {
                     '@layouts': 'src/layouts',
                     '@features': 'src/features',
                     '@pages': 'src/pages',
+                    '@hooks': 'src/hooks',
                 },
                 extensions: ['tsx', 'ts', 'sass'],
             },
