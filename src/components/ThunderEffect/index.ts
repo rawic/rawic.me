@@ -1,1 +1,0 @@
-export { ThunderEffect } from './ThunderEffect';

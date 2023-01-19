@@ -4,6 +4,7 @@ import BackgroundImage from 'gatsby-background-image';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import { useEffect, useRef } from 'react';
+
 import { useDidUpdateEffect } from '@hooks';
 
 import { BackgroundProps } from './Background.types';
@@ -17,7 +18,7 @@ export const Background = (props: BackgroundProps) => {
             flashRef.current.classList.add('-run-immediately');
             const timeout = setTimeout(
                 () => flashRef.current.classList.remove('-run-immediately'),
-                7000,
+                1000,
             );
 
             return () => {
