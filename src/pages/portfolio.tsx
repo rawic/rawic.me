@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { useEffect } from 'react';
 
@@ -14,6 +14,22 @@ const PortfolioPage = () => {
     const { t } = useTranslation('', {
         keyPrefix: 'portfolio',
     });
+
+    useEffect(() => {
+        const handleScroll = (event) => {
+            if (event.deltaY > 0) {
+                // Scrolling down
+                navigate('/personal-projects');
+            } else {
+                // Scrolling up
+                navigate('/');
+            }
+        };
+        window.addEventListener('wheel', handleScroll);
+        return () => {
+            window.removeEventListener('wheel', handleScroll);
+        };
+    }, []);
 
     return (
         <motion.main
