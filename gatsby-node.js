@@ -7,23 +7,27 @@ exports.onCreateBabelConfig = ({ actions }) => {
     });
 };
 
-// exports.onCreatePage = async ({ page, actions }) => {
-//     const { createPage, deletePage } = actions;
+/**
+ * Workaround for missing sitePage.context:
+ * Used for generating sitemap with `gatsby-plugin-react-i18next` and `gatsby-plugin-sitemap` plugins
+ * https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v3-to-v4/#field-sitepagecontext-is-no-longer-available-in-graphql-queries
+ */
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
 
-//     // Check if the page is a localized 404
-//     if (page.path.match(/^(\/[a-z]{2})?\/404\/$/)) {
-//         const oldPage = { ...page };
-
-//         // Get the language code from the path, and match all paths
-//         // starting with this code (apart from other valid paths)
-//         const langCode = page.path.split(`/`)[1];
-//         page.matchPath = `/${langCode}/*`;
-
-//         console.log(page.path, 'path');
-//         console.log(page, 'pagep');
-
-//         // Recreate the modified page
-//         deletePage(oldPage);
-//         // createPage(page);
-//     }
-// };
+    createTypes(`
+        type SitePage implements Node {
+            context: SitePageContext
+        }
+        type SitePageContext {
+            i18n: i18nContext
+        }
+        type i18nContext {
+            language: String,
+            languages: [String],
+            defaultLanguage: String,
+            originalPath: String
+            routed: Boolean
+        }
+  `);
+};

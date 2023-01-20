@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import { useDidUpdateEffect } from '@hooks';
 
@@ -48,9 +47,13 @@ export const Background = (props: BackgroundProps) => {
     `);
 
     const currentPage = props.page || 'home';
-    const imageData = data[currentPage].childImageSharp.gatsbyImageData;
+    const imageData = data[currentPage]?.childImageSharp.gatsbyImageData;
     const image = getImage(imageData);
     const bgImage = convertToBgImage(image);
+
+    if (!bgImage) {
+        return null;
+    }
 
     return (
         <>
@@ -61,6 +64,7 @@ export const Background = (props: BackgroundProps) => {
                 onLoad={() => bgRef.current?.selfRef?.classList.add('-active')}
                 {...bgImage}
                 preserveStackingContext
+                critical={true}
             />
             <div className="flashbg" ref={flashRef} key={currentPage}>
                 <BackgroundImage {...bgImage} preserveStackingContext />

@@ -26,13 +26,11 @@
     background-color: #8150cd
 
 .s-white::selection
-    background-color: white
-    color: red
-    -webkit-text-fill-color: red
-.s-red::selection
-    background-color: red
     color: white
-    -webkit-text-fill-color: white
+    -webkit-text-fill-color: white !important
+.s-red::selection
+    color: red
+    -webkit-text-fill-color: red !important
 
 *
     box-sizing: border-box
@@ -148,23 +146,50 @@ body
         display: block
 
 #rawic
-    fill: white
-    animation: flash2 ease-out 5s infinite
-    display: block
-    &:hover
-        animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 3
+    position: absolute
+    top: 0
+    left: 0
+    width: 200px
+    height: 24px
+    
+    &:nth-child(1)
+        animation: flash2 ease-out 5s infinite
+        fill: #fff;
+        &:hover
+            animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 
+    &:nth-of-type(2)
+    &:nth-of-type(3)
+        clip: rect(0, 0, 0, 0) 
+
+    &:nth-of-type(2) 
+        fill: #fffafa
+        left: -1px
+        animation: svg-glitch-effect 2s infinite linear alternate-reverse
+    
+    &:nth-of-type(3) 
+        fill: #f5f5f5
+        left: 1px
+        animation: svg-glitch-effect 3s infinite linear alternate-reverse
+
+
+$steps: 20
+
+@keyframes svg-glitch-effect
+    @for $i from 0 through $steps
+        #{percentage($i*(1/$steps))}
+            clip: rect(random(24) + px, 200px, random(24) + px, 0)
 
 @keyframes glitch
     0%
         transform: translate(0)
         opacity: 1
-        fill: green
+        fill: #01a2ff
         filter: blur(0)
 
     20%
         transform: translate(-2px, 2px)
         opacity: 0.8
-        fill: #ea075e
+        fill: #ff0061
         filter: blur(1px) drop-shadow(0 0 3px white)
 
     40%
@@ -182,7 +207,7 @@ body
     80%
         transform: translate(2px, -2px)
         opacity: 0.8
-        fill: #079dfc
+        fill: #01a2ff
         filter: blur(0)
 
     to

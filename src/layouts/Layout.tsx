@@ -32,7 +32,7 @@ export const Layout = (props: LayoutProps) => {
                 options={{
                     particles: {
                         number: {
-                            value: 62,
+                            value: 40,
                         },
                         color: {
                             value: '#ffffff',

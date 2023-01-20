@@ -10,7 +10,12 @@ export const Header = ({ siteTitle = '' }) => {
         <header className={headerStyles.pageHeader}>
             <h1 className={headerStyles.logo}>
                 <Link to={'/'} aria-label="RAWIC - Rafał Wichowski, Strona główna" rel="index">
-                    <Logo />
+                    <div className={headerStyles.logoWrapper}>
+                        <Logo />
+                        <Logo />
+                        <Logo />
+                    </div>
+
                     <span>{siteTitle}</span>
                 </Link>
             </h1>

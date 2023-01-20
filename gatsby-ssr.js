@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import { Layout } from './src/layouts';
 import React from 'react';
 
@@ -12,5 +13,5 @@ export const wrapPageElement = ({ element }) => {
         ),
     );
 
-    return newElement;
+    return <AnimatePresence exitBeforeEnter>{newElement}</AnimatePresence>;
 };

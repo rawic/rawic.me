@@ -16,6 +16,7 @@ export const SEO = ({ description, title, image, author, url }: SEOProps) => {
                         image
                         author
                         url
+                        siteUrl
                     }
                 }
             }
