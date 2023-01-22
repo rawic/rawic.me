@@ -151,33 +151,72 @@ body
     left: 0
     width: 200px
     height: 24px
-    
+    background: #000
+    path
+        stroke-dashoffset: 0
     &:nth-child(1)
         animation: flash2 ease-out 5s infinite
-        fill: #fff;
-        &:hover
-            animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 
+        fill: #fff
+        // &:hover
+        //     animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     &:nth-of-type(2)
     &:nth-of-type(3)
-        clip: rect(0, 0, 0, 0) 
+        clip: rect(0, 0, 0, 0)
 
-    &:nth-of-type(2) 
+    &:nth-of-type(2)
         fill: #fffafa
-        left: -1px
-        animation: svg-glitch-effect 2s infinite linear alternate-reverse
-    
-    &:nth-of-type(3) 
+        left: -2px
+        animation: svg-glitch-effect ease-out 6s infinite alternate-reverse
+    &:nth-of-type(3)
         fill: #f5f5f5
-        left: 1px
-        animation: svg-glitch-effect 3s infinite linear alternate-reverse
-
-
-$steps: 20
+        left: 2px
+        animation: svg-glitch-effect ease-out 7s infinite alternate-reverse
 
 @keyframes svg-glitch-effect
-    @for $i from 0 through $steps
-        #{percentage($i*(1/$steps))}
-            clip: rect(random(24) + px, 200px, random(24) + px, 0)
+    0%
+        clip: rect(74px, 270px, 1px, 0)
+    5%
+        clip: rect(59px, 270px, 25px, 0)
+    10%
+        clip: rect(59px, 270px, 64px, 0)
+    15%
+        clip: rect(65px, 270px, 30px, 0)
+    20%
+        clip: rect(63px, 270px, 70px, 0)
+    25%
+        clip: rect(21px, 270px, 24px, 0)
+        display: none
+    30%
+        clip: rect(43px, 270px, 9px, 0)
+    35%
+        clip: rect(27px, 270px, 21px, 0)
+    40%
+        clip: rect(14px, 270px, 68px, 0)
+    45%
+        clip: rect(61px, 270px, 48px, 0)
+    50%
+        clip: rect(11px, 270px, 30px, 0)
+    55%
+        clip: rect(8px, 270px, 22px, 0)
+    60%
+        clip: rect(51px, 270px, 10px, 0)
+    65%
+        clip: rect(46px, 270px, 65px, 0)
+    70%
+        clip: rect(16px, 270px, 8px, 0)
+    75%
+        clip: rect(7px, 270px, 10px, 0)
+    80%
+        clip: rect(3px, 270px, 48px, 0)
+    85%
+        clip: rect(75px, 270px, 69px, 0)
+        display: block
+    90%
+        clip: rect(30px, 270px, 39px, 0)
+    95%
+        clip: rect(40px, 270px, 72px, 0)
+    100%
+        clip: rect(20px, 270px, 7px, 0)
 
 @keyframes glitch
     0%
@@ -251,6 +290,7 @@ ul
 main
     margin-top: auto
     outline: none
+    height: 630px
 
 .gradient-text
     display: inline-block

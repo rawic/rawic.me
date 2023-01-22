@@ -26,6 +26,7 @@
             "@features": ["./src/features"],
             "@layouts": ["./src/layouts"],
             "@hooks": ["./src/hooks"],
+            "@routes": ["./src/routes"]
         }
     },
     "include": ["src", "src/**/*.ts"],

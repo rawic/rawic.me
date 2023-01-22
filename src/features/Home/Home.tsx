@@ -1,19 +1,22 @@
 import { motion } from 'framer-motion';
+import { navigate, PageProps } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNextPrevPath } from '@hooks';
 
 import * as homeStyles from './home.module.sass';
 
-export const Home = () => {
+export const Home = ({ location }: { location: PageProps['location'] }) => {
+    const { prevPath, nextPath } = useNextPrevPath(location);
     const { t } = useTranslation('', { keyPrefix: 'home' });
 
     const thanks = t('cv.thanks');
 
     return (
-        <motion.main
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -23,10 +26,22 @@ export const Home = () => {
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => {
+                            navigate(prevPath);
+                        }}
+                    >
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => {
+                            navigate(nextPath);
+                        }}
+                    >
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>
@@ -114,6 +129,6 @@ export const Home = () => {
                     </a>
                 </article>
             </div>
-        </motion.main>
+        </motion.div>
     );
 };

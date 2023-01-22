@@ -7,7 +7,7 @@ import { Home } from '@features';
 
 import type { PageProps } from 'gatsby';
 const IndexPage = (props: PageProps) => {
-    return <Home />;
+    return <Home location={props.location} />;
 };
 
 export default IndexPage;

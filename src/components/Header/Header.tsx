@@ -1,5 +1,4 @@
 import { Link } from 'gatsby-plugin-react-i18next';
-import { useContext } from 'react';
 
 import { Logo } from '@components';
 

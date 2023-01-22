@@ -1,4 +1,5 @@
-import { graphql } from 'gatsby';
+import { motion } from 'framer-motion';
+import { graphql, navigate, PageProps } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { SEO } from '@components';
@@ -6,15 +7,16 @@ import { PersonalProject } from '@features';
 import * as homeStyles from '@features/Home/home.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
+import { useNextPrevPath } from '@hooks';
 
-const PersonalProjectsPage = (props) => {
+const PersonalProjectsPage = ({ location }: { location: PageProps['location'] }) => {
+    const { prevPath, nextPath } = useNextPrevPath(location);
     const { t } = useTranslation('', {
         keyPrefix: 'personal-projects',
     });
 
     return (
-        <motion.main
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -24,10 +26,22 @@ const PersonalProjectsPage = (props) => {
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => {
+                            navigate(prevPath);
+                        }}
+                    >
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => {
+                            navigate(nextPath);
+                        }}
+                    >
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>
@@ -59,7 +73,7 @@ const PersonalProjectsPage = (props) => {
                     </div>
                 </article>
             </div>
-        </motion.main>
+        </motion.div>
     );
 };
 

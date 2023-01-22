@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { graphql, navigate } from 'gatsby';
+import { graphql, navigate, PageProps } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
-import { useEffect } from 'react';
 
 import { SEO } from '@components';
 import { PortfolioProject } from '@features';
@@ -9,30 +8,16 @@ import * as homeStyles from '@features/Home/home.module.sass';
 import * as stylesPortfolio from '@features/PortfolioProject/portfolio.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNextPrevPath } from '@hooks';
 
-const PortfolioPage = () => {
+const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
+    const { prevPath, nextPath } = useNextPrevPath(location);
     const { t } = useTranslation('', {
         keyPrefix: 'portfolio',
     });
 
-    useEffect(() => {
-        const handleScroll = (event) => {
-            if (event.deltaY > 0) {
-                // Scrolling down
-                navigate('/personal-projects');
-            } else {
-                // Scrolling up
-                navigate('/');
-            }
-        };
-        window.addEventListener('wheel', handleScroll);
-        return () => {
-            window.removeEventListener('wheel', handleScroll);
-        };
-    }, []);
-
     return (
-        <motion.main
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -42,10 +27,22 @@ const PortfolioPage = () => {
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => {
+                            navigate(prevPath);
+                        }}
+                    >
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => {
+                            navigate(nextPath);
+                        }}
+                    >
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>
@@ -115,7 +112,7 @@ const PortfolioPage = () => {
                     </ul>
                 </article>
             </div>
-        </motion.main>
+        </motion.div>
     );
 };
 

@@ -22,6 +22,7 @@ module.exports = {
                     '@features': 'src/features',
                     '@pages': 'src/pages',
                     '@hooks': 'src/hooks',
+                    '@routes': 'src/routes',
                 },
                 extensions: ['tsx', 'ts', 'sass'],
             },
