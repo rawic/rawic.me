@@ -5,12 +5,10 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNextPrevPath } from '@hooks';
 
 import * as homeStyles from './home.module.sass';
 
 export const Home = ({ location }: { location: PageProps['location'] }) => {
-    const { prevPath, nextPath } = useNextPrevPath(location);
     const { t } = useTranslation('', { keyPrefix: 'home' });
 
     const thanks = t('cv.thanks');
@@ -26,22 +24,10 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button
-                        type="button"
-                        aria-hidden="true"
-                        onClick={() => {
-                            navigate(prevPath);
-                        }}
-                    >
+                    <button type="button" aria-hidden="true">
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button
-                        type="button"
-                        aria-hidden="true"
-                        onClick={() => {
-                            navigate(nextPath);
-                        }}
-                    >
+                    <button type="button" aria-hidden="true">
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>

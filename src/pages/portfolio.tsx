@@ -8,10 +8,8 @@ import * as homeStyles from '@features/Home/home.module.sass';
 import * as stylesPortfolio from '@features/PortfolioProject/portfolio.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNextPrevPath } from '@hooks';
 
 const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
-    const { prevPath, nextPath } = useNextPrevPath(location);
     const { t } = useTranslation('', {
         keyPrefix: 'portfolio',
     });
@@ -27,22 +25,10 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button
-                        type="button"
-                        aria-hidden="true"
-                        onClick={() => {
-                            navigate(prevPath);
-                        }}
-                    >
+                    <button type="button" aria-hidden="true">
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button
-                        type="button"
-                        aria-hidden="true"
-                        onClick={() => {
-                            navigate(nextPath);
-                        }}
-                    >
+                    <button type="button" aria-hidden="true">
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>

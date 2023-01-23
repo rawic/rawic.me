@@ -7,10 +7,8 @@ import { PersonalProject } from '@features';
 import * as homeStyles from '@features/Home/home.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNextPrevPath } from '@hooks';
 
 const PersonalProjectsPage = ({ location }: { location: PageProps['location'] }) => {
-    const { prevPath, nextPath } = useNextPrevPath(location);
     const { t } = useTranslation('', {
         keyPrefix: 'personal-projects',
     });
@@ -26,22 +24,10 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button
-                        type="button"
-                        aria-hidden="true"
-                        onClick={() => {
-                            navigate(prevPath);
-                        }}
-                    >
+                    <button type="button" aria-hidden="true">
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button
-                        type="button"
-                        aria-hidden="true"
-                        onClick={() => {
-                            navigate(nextPath);
-                        }}
-                    >
+                    <button type="button" aria-hidden="true">
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>
@@ -89,7 +75,7 @@ export const Head = ({ location, params, data, pageContext }) => {
 
     return (
         <SEO
-            title={`🤓 ${obj?.['personal-projects']['seo-title']}`}
+            title={`🤓 ${obj?.['seo']['personal-projects']['title']}`}
             url="https://rawic.me/personal-projects/"
         />
     );

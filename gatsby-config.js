@@ -23,6 +23,7 @@ module.exports = {
                     '@pages': 'src/pages',
                     '@hooks': 'src/hooks',
                     '@routes': 'src/routes',
+                    '@utils': 'src/utils',
                 },
                 extensions: ['tsx', 'ts', 'sass'],
             },

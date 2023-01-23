@@ -6,15 +6,12 @@ import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
 
 import { Background, BackgroundEffects, Footer, Header, Menu } from '@components';
-import { useNavigateOnWheel } from '@hooks';
 
 import * as layoutStyles from './layout.module.sass';
 import { LayoutProps } from './Layout.types';
 
 export const Layout = (props: LayoutProps) => {
     const { originalPath } = useI18next();
-
-    useNavigateOnWheel(location);
 
     const particlesInit = useCallback(async (engine) => {
         await loadFull(engine);
