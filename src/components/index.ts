@@ -7,3 +7,4 @@ export { Logo } from './Logo';
 export { Menu } from './Menu';
 export { SEO } from './SEO';
 export { SocialMedia } from './SocialMedia';
+export { RainEffect } from './RainEffect';
