@@ -1,4 +1,4 @@
-import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { faLaughBeam, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faDesktop, faPaperclip } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,10 @@ export const Menu = () => {
         keyPrefix: 'navigation',
     });
 
+    const { language } = useI18next();
+
+    const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf' : '/Rafal-Wichowski-CV-PL.pdf';
+
     return (
         <nav>
             <ul className={menuStyles.navList}>
@@ -24,7 +28,7 @@ export const Menu = () => {
                     </li>
                 ))}
                 <li>
-                    <a href="/Rafał-Wichowski-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href={cvLink} target="_blank" rel="noopener noreferrer">
                         <span className={menuStyles.link}>{t('cv')}</span>
                         <span className={menuStyles.dot} />
                     </a>
@@ -51,7 +55,7 @@ export const Menu = () => {
                     </Link>
                 </li>
                 <li>
-                    <a href="/Rafał-Wichowski-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href={cvLink} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faPaperclip} />
                         {t('cv')}
                     </a>

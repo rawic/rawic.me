@@ -123,6 +123,10 @@ module.exports = {
                     interpolation: {
                         escapeValue: false,
                     },
+                    detection: {
+                        order: ['navigator', 'browser'],
+                        caches: ['localStorage'],
+                    },
                 },
             },
         },

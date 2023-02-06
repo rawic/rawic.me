@@ -15,6 +15,10 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
 
     const thanks = t('cv.thanks');
 
+    const { language } = useI18next();
+
+    const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf' : '/Rafal-Wichowski-CV-PL.pdf';
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -112,7 +116,7 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
                     </section>
 
                     <a
-                        href={'/Rafał-Wichowski-Resume.pdf'}
+                        href={cvLink}
                         className={homeStyles.btn}
                         target="_blank"
                         rel="noopener noreferrer"

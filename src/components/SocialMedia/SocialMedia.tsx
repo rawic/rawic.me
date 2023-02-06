@@ -40,7 +40,7 @@ export const SocialMedia = () => {
             </li>
             <li>
                 <a
-                    href="https://www.linkedin.com/in/rwichowski/"
+                    href="https://www.linkedin.com/in/rafalwichowski/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Linkedin"
