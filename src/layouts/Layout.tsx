@@ -6,7 +6,6 @@ import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
 
 import { Background, BackgroundEffects, Footer, Header, Menu, RainEffect } from '@components';
-import { makeItRain } from '@utils';
 
 import * as layoutStyles from './layout.module.sass';
 import { LayoutProps } from './Layout.types';
@@ -14,31 +13,27 @@ import { LayoutProps } from './Layout.types';
 export const Layout = (props: LayoutProps) => {
     const { originalPath } = useI18next();
 
-    const particlesInit = useCallback(async (engine) => {
-        await loadFull(engine);
-    }, []);
+    // const particlesInit = useCallback(async (engine) => {
+    //     await loadFull(engine);
+    // }, []);
 
     if (originalPath === '/offline-plugin-app-shell-fallback') {
         return null;
     }
-
-    useEffect(() => {
-        makeItRain();
-    }, []);
 
     return (
         <>
             <Background page={originalPath.replace(/-|\//g, '')} />
             <BackgroundEffects />
             <RainEffect />
-            <Particles
+            {/* <Particles
                 id="tsparticles"
                 className={layoutStyles.particlesJs}
                 init={particlesInit}
                 options={{
                     particles: {
                         number: {
-                            value: 40,
+                            value: 30,
                         },
                         color: {
                             value: '#ffffff',
@@ -100,7 +95,7 @@ export const Layout = (props: LayoutProps) => {
                     },
                     detectRetina: true,
                 }}
-            />
+            /> */}
             <div className={layoutStyles.pageContainer}>
                 <div className={layoutStyles.pageContent}>
                     <Header />

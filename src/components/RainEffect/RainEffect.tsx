@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import * as rainEffectStyles from './rain-effect.module.sass';
 
@@ -26,14 +26,14 @@ export const RainEffect = () => {
             position += randoFiver;
             newRaindrops.push({
                 left: `${position}%`,
-                bottom: `${randoFiver + randoFiver - 1 + 85}%`,
-                // animationDelay: `0.${randoHundo}s`,
+                bottom: `${randoFiver + randoFiver - 1 + 100}%`,
+                animationDelay: `0.${randoHundo}s`,
                 animationDuration: `0.8${randoHundo}s`,
             });
             newBackRaindrops.push({
                 right: `${position}%`,
-                bottom: `${randoFiver + randoFiver - 1 + 85}%`,
-                // animationDelay: `0.95${randoHundo}s`,
+                bottom: `${randoFiver + randoFiver - 1 + 100}%`,
+                animationDelay: `0.95${randoHundo}s`,
                 animationDuration: `0.95${randoHundo}s`,
             });
         }

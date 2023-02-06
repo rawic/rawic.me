@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { graphql, navigate, PageProps } from 'gatsby';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { SEO } from '@components';
 import { PortfolioProject } from '@features';
@@ -14,6 +14,8 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
         keyPrefix: 'portfolio',
     });
 
+    const { navigate } = useI18next();
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -25,10 +27,14 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button type="button" aria-hidden="true">
+                    <button type="button" aria-hidden="true" onClick={() => navigate('/')}>
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => navigate('/personal-projects/')}
+                    >
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>

@@ -1,17 +1,20 @@
 import { motion } from 'framer-motion';
-import { graphql, navigate, PageProps } from 'gatsby';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { graphql, PageProps } from 'gatsby';
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { SEO } from '@components';
 import { PersonalProject } from '@features';
 import * as homeStyles from '@features/Home/home.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ROUTES } from '@routes';
 
 const PersonalProjectsPage = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', {
         keyPrefix: 'personal-projects',
     });
+
+    const { navigate } = useI18next();
 
     return (
         <motion.div
@@ -24,10 +27,14 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
         >
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
-                    <button type="button" aria-hidden="true">
+                    <button
+                        type="button"
+                        aria-hidden="true"
+                        onClick={() => navigate('/portfolio/')}
+                    >
                         <FontAwesomeIcon icon={faChevronUp} />
                     </button>
-                    <button type="button" aria-hidden="true">
+                    <button type="button" aria-hidden="true" onClick={() => navigate('/')}>
                         <FontAwesomeIcon icon={faChevronDown} />
                     </button>
                 </div>
@@ -65,7 +72,19 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
 
 export default PersonalProjectsPage;
 
-export const Head = ({ location, params, data, pageContext }) => {
+interface HeadProps {
+    data: {
+        locales: {
+            edges: {
+                node: {
+                    data: string;
+                };
+            }[];
+        };
+    };
+}
+
+export const Head = ({ data }: HeadProps) => {
     const locales = data.locales.edges[0].node.data;
     let obj = undefined;
 
