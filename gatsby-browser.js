@@ -13,5 +13,5 @@ export const wrapPageElement = ({ element }) => {
         ),
     );
 
-    return <AnimatePresence exitBeforeEnter>{newElement}</AnimatePresence>;
+    return <AnimatePresence>{newElement}</AnimatePresence>;
 };
