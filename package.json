@@ -22,7 +22,7 @@
         "gatsby-image": "^3.11.0",
         "gatsby-plugin-alias-imports": "^1.0.5",
         "gatsby-plugin-image": "^3.4.0",
-        "gatsby-plugin-layout": "^4.4.0",
+        "gatsby-plugin-layout": "^4.5.0",
         "gatsby-plugin-manifest": "^5.4.0",
         "gatsby-plugin-netlify": "^5.1.0",
         "gatsby-plugin-offline": "^6.4.0",
