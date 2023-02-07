@@ -13,10 +13,6 @@ import { LayoutProps } from './Layout.types';
 export const Layout = (props: LayoutProps) => {
     const { originalPath } = useI18next();
 
-    if (originalPath === '/offline-plugin-app-shell-fallback') {
-        return null;
-    }
-
     return (
         <>
             <Background page={originalPath.replace(/-|\//g, '')} />
