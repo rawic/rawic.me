@@ -110,7 +110,34 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
 
 export default PortfolioPage;
 
-export const Head = () => <SEO title="🤓 Portfolio" url="https://rawic.me/portfolio/" />;
+interface HeadProps {
+    data: {
+        locales: {
+            edges: {
+                node: {
+                    data: string;
+                };
+            }[];
+        };
+    };
+}
+
+export const Head = ({ data }: HeadProps) => {
+    const locales = data.locales.edges[0].node.data;
+    let obj = undefined;
+
+    if (locales) {
+        obj = JSON.parse(locales);
+    }
+
+    return (
+        <SEO
+            title={`🤓 ${obj?.['seo']['portfolio']['title']}`}
+            description={obj?.['seo']['portfolio']['description']}
+            url="https://rawic.me/portfolio/"
+        />
+    );
+};
 
 export const query = graphql`
     query ($language: String!) {
