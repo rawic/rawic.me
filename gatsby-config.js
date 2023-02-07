@@ -118,6 +118,7 @@ module.exports = {
                 defaultLanguage,
                 siteUrl: `https://rawic.me/`,
                 trailingSlash: 'always',
+                redirect: false,
                 i18nextOptions: {
                     fallbackLng: defaultLanguage,
                     supportedLngs: languages,
