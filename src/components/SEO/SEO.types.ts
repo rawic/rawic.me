@@ -4,4 +4,5 @@ export interface SEOProps {
     image?: string;
     author?: string;
     url?: string;
+    children?: React.ReactNode;
 }

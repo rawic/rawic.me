@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { SEOProps } from './SEO.types';
 
-export const SEO = ({ description, title, image, author, url }: SEOProps) => {
+export const SEO = ({ description, title, image, author, url, children }: SEOProps) => {
     const {
         site: { siteMetadata: seo },
     } = useStaticQuery(
@@ -48,22 +48,7 @@ export const SEO = ({ description, title, image, author, url }: SEOProps) => {
             <meta name="twitter:title" content={pageTitle} />
             <meta name="twitter:description" content={pageDescription} />
             <meta name="twitter:image" content={seo.image} />
+            {children}
         </>
     );
-};
-
-SEO.defaultProps = {
-    lang: `pl`,
-    meta: [],
-    keywords: [],
-    description: ``,
-    image: ``,
-    url: ``,
-};
-
-SEO.propTypes = {
-    description: PropTypes.string,
-    image: PropTypes.string,
-    url: PropTypes.string,
-    title: PropTypes.string.isRequired,
 };

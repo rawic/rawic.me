@@ -40,7 +40,6 @@ export const Head = ({ data }: HeadProps) => {
         />
     );
 };
-
 export const query = graphql`
     query ($language: String!) {
         locales: allLocale(filter: { language: { eq: $language } }) {
