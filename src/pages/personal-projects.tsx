@@ -95,6 +95,7 @@ export const Head = ({ data }: HeadProps) => {
     return (
         <SEO
             title={`🤓 ${obj?.['seo']['personal-projects']['title']}`}
+            description={obj?.['seo']['personal-projects']['description']}
             url="https://rawic.me/personal-projects/"
         />
     );
