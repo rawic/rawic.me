@@ -1,0 +1,83 @@
+{
+    "copied": "Copied",
+    "navigation": {
+        "greetings": "Greetings",
+        "portfolio": "Portfolio",
+        "my-projects": "My projects",
+        "cv": "Curriculum vitae"
+    },
+    "footer": {
+        "designs": "Designs"
+    },
+    "social": {
+        "github": "GitHub profile",
+        "invision": "inVision profile",
+        "linkedin": "LinkedIn profile"
+    },
+    "home": {
+        "heading": "Hello, my name is Rafał.",
+        "subheading": {
+            "part-1": "I am a programmer from ",
+            "warsaw": {
+                "part-1": "War",
+                "part-2": "saw"
+            },
+            "part-2": "currently seeking new challenges."
+        },
+        "about": {
+            "heading": "About me",
+            "description": "I specialize in\u00A0implementing Front-End solutions, but I\u00A0am ambitious in\u00A0becoming well-rounded in\u00A0the\u00A0IT industry. I have several years of experience in building web applications, designing UI, and\u00A0have a\u00A0basic understanding of UX.",
+            "description-2": "I am capable of\u00A0working independently and\u00A0as part of\u00A0a\u00A0team. I am always willing to\u00A0help others and\u00A0enjoy learning, sharing knowledge, and\u00A0listening attentively. Regardless of\u00A0the\u00A0challenge, I strive to\u00A0achieve a\u00A0perfect product with appropriate performance, usability, and\u00A0accessibility. I\u00A0work intelligently to achieve this."
+        },
+        "experience": {
+            "heading": {
+                "part-1": "I have been in the industry continuously ",
+                "part-2": "since 2012"
+            }
+        },
+        "cv": {
+            "title": "Get CV",
+            "data": "Get CV",
+            "thanks": "Thank\u00A0you"
+        }
+    },
+    "portfolio": {
+        "heading": "Some projects I have participated in",
+        "description": {
+            "part-1": "Participating in the development of\u00A0the\u00A0following applications",
+            "part-2": "was a\u00A0great pleasure for\u00A0me."
+        }
+    },
+    "personal-projects": {
+        "heading": "# A few projects that I am currently working on",
+        "description": {
+            "part-1": "In my free time, I try to implement my own ideas ",
+            "part-2": "and I am happy to share them with others."
+        },
+        "featured": "Featured project",
+        "projects": {
+            "project-1": {
+                "title": "Root Wood Studio",
+                "description": "One of my first ideas implemented after hours. An online store for desks for the most demanding customers."
+            },
+            "project-2": {
+                "title": "Dribbi",
+                "description": "An application that tracks the duration of performed operations. Similar to the Toggl app, but fully free and with slightly different features."
+            }
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Rafał Wichowski - Front-End Developer, UI Designer | RAWIC",
+            "description": "Experienced Front-End Developer and UI Designer from Warsaw, specializing in building web applications and designing UI. Strong emphasis on attention to detail, good design, and clean code practices. Skilled in HTML5, CSS3, JavaScript, React, and more. Available for new challenges and team projects."
+        },
+        "portfolio": {
+            "title": "Rafał Wichowski - Front-End Developer, UI Designer - Portfolio | RAWIC",
+            "description": "I'm a Front-End Developer specializing in building responsive, user-friendly websites and web apps. My portfolio features a range of projects from e-commerce sites to landing pages, all created using tools like Javascript, React and React related tools like Gatsby, Redux, Storybook. With experience working with clients of all sizes, I'm dedicated to delivering high-quality work that meets the needs of both users and businesses."
+        },
+        "personal-projects": {
+            "title": "Rafał Wichowski - Front-End Developer, UI Designer - My Projects | RAWIC",
+            "description": "Discover my passion for web development through my personal projects. From e-commerce websites to landing pages, these projects showcase my proficiency in Javascript, React, Gatsby, and other industry-standard tools. My personal projects are not only a demonstration of my technical skills but also my ability to think creatively and push the boundaries of what's possible. Take a look at my personal projects page to see the results of my own ideas and hard work."
+        }
+    }
+}

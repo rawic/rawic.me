@@ -1,0 +1,83 @@
+{
+    "copied": "Skopiowano",
+    "navigation": {
+        "greetings": "Cześć",
+        "portfolio": "Portfolio",
+        "my-projects": "Moje projekty",
+        "cv": "Curriculum vitae"
+    },
+    "footer": {
+        "designs": "Projekty"
+    },
+    "social": {
+        "github": "Profil GitHub",
+        "invision": "Profil inVision",
+        "linkedin": "Profil LinkedIn"
+    },
+    "home": {
+        "heading": "Cześć, tu Rafał.",
+        "subheading": {
+            "part-1": "Jestem programistą z ",
+            "warsaw": {
+                "part-1": "Wars",
+                "part-2": "zawy"
+            },
+            "part-2": "aktualnie poszukuję nowych wyzwań."
+        },
+        "about": {
+            "heading": "O mnie",
+            "description": "Wdrażam rozwiązania warstwy Front-End, ale\u00A0ambitnie dążę do\u00A0wszechstronności w\u00A0branży IT. Mam wieloletnie doświadczenie w\u00A0budowaniu aplikacji internetowych. Potrafię projektować UI, a\u00A0także znam podstawy UX.",
+            "description-2": "Potrafię pracować indywidualnie jak i\u00A0w\u00A0ramach zespołu. Zawsze chętnie pomagam innym. Lubię się uczyć, dzielić wiedzą i\u00A0uważnie słucham. Niezależnie od\u00A0wyzwania, dążę do\u00A0realizacji idealnego produktu, o\u00A0odpowiedniej wydajności, użyteczności i\u00A0dostępności. Mądrze pracuję, aby to\u00A0osiągnąć."
+        },
+        "experience": {
+            "heading": {
+                "part-1": "Jestem w branży nieustannie ",
+                "part-2": "od 2012 roku"
+            }
+        },
+        "cv": {
+            "title": "Moje CV",
+            "data": "Pobierz CV",
+            "thanks": "Dziękuję"
+        }
+    },
+    "portfolio": {
+        "heading": "Niektóre projekty, w których uczestniczyłem",
+        "description": {
+            "part-1": "Uczestniczenie w rozwoju tych aplikacji",
+            "part-2": "była dla mnie wielką przyjemnością."
+        }
+    },
+    "personal-projects": {
+        "heading": "# Kilka projektów nad którymi aktualnie pracuję",
+        "description": {
+            "part-1": "W wolnym czasie staram się realizować",
+            "part-2": "własne pomysły, którymi chętnie dzielę się z innymi."
+        },
+        "featured": "Projekt wyróżniony",
+        "projects": {
+            "project-1": {
+                "title": "Root Wood Studio",
+                "description": "Jeden z pierwszych moich pomysłów realizowanych po godzinach. Sklep internetowy z biurkami dla najbardziej wymagających."
+            },
+            "project-2": {
+                "title": "Dribbi",
+                "description": "Aplikacja, która śledzi czas wykonywanych operacji. Podobna do aplikacji Toggl, ale w pełni darmowa i z nieco innymi funkcjami."
+            }
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Rafał Wichowski - Front-End Developer, UI Designer | RAWIC",
+            "description": "Doświadczony Front-End Developer i UI Designer z Warszawy, specjalizujący się w tworzeniu aplikacji internetowych i projektowaniu interfejsu. Skupiam się na dbałości o szczegóły, dobrym designie i czystych praktykach kodowania. Posiadam znajomość HTML5, CSS3, JavaScript, React oraz innych narzędzi. Jestem gotów na nowe wyzwania."
+        },
+        "portfolio": {
+            "title": "Rafał Wichowski - Front-End Developer, UI Designer - Portfolio | RAWIC",
+            "description": "Jestem Front-End Developerem specjalizującym się w tworzeniu responsywnych, przyjaznych dla użytkownika stron internetowych i aplikacji webowych. Moje portfolio zawiera szeroki zakres projektów od sklepów internetowych po landing pages, wszystko stworzone za pomocą narzędzi takich jak Javascript, React oraz narzędzi związanych z Reactem jak Gatsby, Redux, Storybook. Posiadam doświadczenie w pracy z klientami różnych rozmiarów i jestem zaangażowany w dostarczanie wysokiej jakości rozwiązań, które spełniają potrzeby zarówno użytkowników, jak i biznesów."
+        },
+        "personal-projects": {
+            "title": "Rafał Wichowski - Front-End Developer, UI Designer - Moje Projekty | RAWIC",
+            "description": "Interesuje mnie tworzenie stron internetowych, dlatego w wolnych chwilach realizuję własne projekty. Od sklepów internetowych po landing pages - wszystko z wykorzystaniem technologii takich jak JavaScript, React, Gatsby i innych. Moje prywatne projekty to nie tylko prezentacja moich umiejętności technicznych, ale także możliwości kreatywnego myślenia i projektowania."
+        }
+    }
+}
