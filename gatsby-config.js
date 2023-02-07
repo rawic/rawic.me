@@ -116,7 +116,7 @@ module.exports = {
                 localeJsonSourceName: `locale`,
                 languages,
                 defaultLanguage,
-                siteUrl: `https://rawic.me`,
+                siteUrl: `https://rawic.me/`,
                 trailingSlash: 'always',
                 i18nextOptions: {
                     fallbackLng: defaultLanguage,
@@ -125,8 +125,7 @@ module.exports = {
                         escapeValue: false,
                     },
                     detection: {
-                        order: ['navigator', 'browser'],
-                        caches: ['localStorage'],
+                        order: ['querystring'],
                     },
                 },
             },
