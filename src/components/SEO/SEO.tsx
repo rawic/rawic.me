@@ -38,7 +38,7 @@ export const SEO = ({ description, title, image, author, url, children }: SEOPro
 
             {/* OpenGraph tags */}
             <meta property="og:title" content={pageTitle} />
-            <meta property="og:url" content="https://rawic.me/" />
+            <meta property="og:url" content={pageUrl} />
             <meta property="og:description" content={pageDescription} />
             <meta property="og:image" content={`https://rawic.me/${seo.image}`} />
 
@@ -47,7 +47,7 @@ export const SEO = ({ description, title, image, author, url, children }: SEOPro
             <meta name="twitter:creator" content="" />
             <meta name="twitter:title" content={pageTitle} />
             <meta name="twitter:description" content={pageDescription} />
-            <meta name="twitter:image" content={seo.image} />
+            <meta name="twitter:image" content={`https://rawic.me/${seo.image}`} />
             {children}
         </>
     );
