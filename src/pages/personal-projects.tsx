@@ -8,6 +8,7 @@ import * as homeStyles from '@features/Home/home.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ROUTES } from '@routes';
+import { HeadProps } from '@types/head';
 
 const PersonalProjectsPage = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', {
@@ -72,32 +73,17 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
 
 export default PersonalProjectsPage;
 
-interface HeadProps {
-    data: {
-        locales: {
-            edges: {
-                node: {
-                    data: string;
-                };
-            }[];
-        };
-    };
-}
-
 export const Head = ({ data }: HeadProps) => {
-    const locales = data.locales.edges[0].node.data;
-    let obj = undefined;
-
-    if (locales) {
-        obj = JSON.parse(locales);
-    }
+    const { data: locales, language } = data.locales.edges[0].node;
+    const obj = locales ? JSON.parse(locales) : {};
+    const { title, description } = obj.seo['personal-projects'];
+    const lang = language === 'pl' ? 'pl/' : '';
+    const url = `https://rawic.me/${lang}personal-projects/`;
 
     return (
-        <SEO
-            title={`🤓 ${obj?.['seo']['personal-projects']['title']}`}
-            description={obj?.['seo']['personal-projects']['description']}
-            url="https://rawic.me/personal-projects/"
-        />
+        <>
+            <SEO title={`🤓 ${title}`} description={description} url={url} lang={language} />
+        </>
     );
 };
 

@@ -5,4 +5,5 @@ export interface SEOProps {
     author?: string;
     url?: string;
     children?: React.ReactNode;
+    lang?: string;
 }
