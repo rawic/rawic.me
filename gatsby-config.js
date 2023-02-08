@@ -8,7 +8,7 @@ module.exports = {
         description: `Programista Front-End nieustannie poszukujący nowych wyzwań. Ponad 5-letnie doświadczenie w tworzeniu aplikacji internetowych.`,
         author: `RAWIC - Rafał Wichowski`,
         image: `src/images/icon.png`,
-        siteUrl: `https://rawic.me`,
+        siteUrl,
         url: `https://rawic.me/`,
     },
     plugins: [
@@ -25,6 +25,7 @@ module.exports = {
                     '@hooks': 'src/hooks',
                     '@routes': 'src/routes',
                     '@utils': 'src/utils',
+                    '@types': 'src/types',
                 },
                 extensions: ['tsx', 'ts', 'sass'],
             },

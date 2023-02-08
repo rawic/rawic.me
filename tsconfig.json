@@ -27,7 +27,8 @@
             "@layouts": ["./src/layouts"],
             "@hooks": ["./src/hooks"],
             "@routes": ["./src/routes"],
-            "@utils": ["./src/utils"]
+            "@utils": ["./src/utils"],
+            "@types": ["./src/types"]
         }
     },
     "include": ["src", "src/**/*.ts"],

@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 
 import { SEOProps } from './SEO.types';
 
-export const SEO = ({ description, title, image, author, url, children }: SEOProps) => {
+export const SEO = ({
+    description,
+    title,
+    image,
+    author,
+    url,
+    children,
+    lang = 'en',
+}: SEOProps) => {
     const {
         site: { siteMetadata: seo },
     } = useStaticQuery(
@@ -30,6 +38,7 @@ export const SEO = ({ description, title, image, author, url, children }: SEOPro
     return (
         <>
             {/* General tags */}
+            <html lang={lang} />
             <title>{`${pageTitle} | Rafał Wichowski`}</title>
             <meta name="description" content={pageDescription} />
             <meta name="author" content={seo.author} />

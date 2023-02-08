@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 
 import { SEO } from '@components';
 import { Home } from '@features';
+import { HeadProps } from '@types';
 
 import type { PageProps } from 'gatsby';
 const IndexPage = (props: PageProps) => {
@@ -12,34 +13,20 @@ const IndexPage = (props: PageProps) => {
 
 export default IndexPage;
 
-interface HeadProps {
-    data: {
-        locales: {
-            edges: {
-                node: {
-                    data: string;
-                };
-            }[];
-        };
-    };
-}
-
 export const Head = ({ data }: HeadProps) => {
-    const locales = data.locales.edges[0].node.data;
-    let obj = undefined;
-
-    if (locales) {
-        obj = JSON.parse(locales);
-    }
+    const { data: locales, language } = data.locales.edges[0].node;
+    const obj = locales ? JSON.parse(locales) : {};
+    const { title, description } = obj.seo.home;
+    const lang = language === 'pl' ? 'pl/' : '';
+    const url = `https://rawic.me/${lang}`;
 
     return (
-        <SEO
-            title={`🤓 ${obj?.['seo']['home']['title']}`}
-            description={obj?.['seo']['home']['description']}
-            url="https://rawic.me/"
-        />
+        <>
+            <SEO title={`🤓 ${title}`} description={description} url={url} lang={language} />
+        </>
     );
 };
+
 export const query = graphql`
     query ($language: String!) {
         locales: allLocale(filter: { language: { eq: $language } }) {
