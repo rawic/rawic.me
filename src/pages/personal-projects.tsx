@@ -7,8 +7,7 @@ import { PersonalProject } from '@features';
 import * as homeStyles from '@features/Home/home.module.sass';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ROUTES } from '@routes';
-import { HeadProps } from '@types/head';
+import { HeadProps } from '@types';
 
 const PersonalProjectsPage = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', {
