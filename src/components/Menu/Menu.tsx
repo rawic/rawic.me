@@ -1,15 +1,6 @@
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { faLaughBeam, faUser } from '@fortawesome/free-regular-svg-icons';
-import {
-    faDesktop,
-    faGrip,
-    faHouse,
-    faHouseChimney,
-    faLayerGroup,
-    faListCheck,
-    faPaperclip,
-} from '@fortawesome/free-solid-svg-icons';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ROUTES } from '@routes';
 
@@ -46,25 +37,25 @@ export const Menu = () => {
             <ul className={menuStyles.mobileNav}>
                 <li>
                     <Link to="/" activeClassName={menuStyles.active}>
-                        <FontAwesomeIcon icon={faHouseChimney} />
+                        <FontAwesomeIcon icon={solid('house-chimney')} />
                         {t('greetings')}
                     </Link>
                 </li>
                 <li>
                     <Link to="/portfolio/" activeClassName={menuStyles.active}>
-                        <FontAwesomeIcon icon={faLayerGroup} />
+                        <FontAwesomeIcon icon={solid('layer-group')} />
                         {t('portfolio')}
                     </Link>
                 </li>
                 <li>
                     <Link to="/personal-projects/" activeClassName={menuStyles.active}>
-                        <FontAwesomeIcon icon={faListCheck} />
+                        <FontAwesomeIcon icon={solid('list-check')} />
                         {t('my-projects')}
                     </Link>
                 </li>
                 <li>
                     <a href={cvLink} target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faPaperclip} />
+                        <FontAwesomeIcon icon={solid('paperclip')} />
                         {t('cv-short')}
                     </a>
                 </li>

@@ -1,11 +1,12 @@
-import * as footerStyles from './footer.module.sass';
-
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SocialMedia } from '@components';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { useState } from 'react';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
+import { SocialMedia } from '@components';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import * as footerStyles from './footer.module.sass';
 
 export const Footer = () => {
     const { t } = useTranslation();
@@ -29,7 +30,10 @@ export const Footer = () => {
                                 <div className={footerStyles.icon} />
                             </div>
                         </div>
-                        <FontAwesomeIcon className={footerStyles.envelope} icon={faEnvelope} />
+                        <FontAwesomeIcon
+                            className={footerStyles.envelope}
+                            icon={solid('envelope')}
+                        />
                     </div>
                 </button>
             </CopyToClipboard>

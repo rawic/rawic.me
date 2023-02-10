@@ -1,6 +1,6 @@
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { faGithub, faInvision, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as stylesSocialMedia from './social-media.module.sass';
@@ -24,7 +24,7 @@ export const SocialMedia = () => {
                     aria-label="GitHub"
                     title={github}
                 >
-                    <FontAwesomeIcon icon={faGithub} />
+                    <FontAwesomeIcon icon={brands('github')} />
                 </a>
             </li>
             <li>
@@ -35,7 +35,7 @@ export const SocialMedia = () => {
                     aria-label="inVision"
                     title={invision}
                 >
-                    <FontAwesomeIcon icon={faInvision} />
+                    <FontAwesomeIcon icon={brands('invision')} />
                 </a>
             </li>
             <li>
@@ -46,7 +46,7 @@ export const SocialMedia = () => {
                     aria-label="Linkedin"
                     title={linkedin}
                 >
-                    <FontAwesomeIcon icon={faLinkedinIn} />
+                    <FontAwesomeIcon icon={brands('linkedin')} />
                 </a>
             </li>
         </ul>

@@ -5,7 +5,7 @@ import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 import { SEO } from '@components';
 import { PersonalProject } from '@features';
 import * as homeStyles from '@features/Home/home.module.sass';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HeadProps } from '@types';
 
@@ -32,10 +32,10 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
                         aria-hidden="true"
                         onClick={() => navigate('/portfolio/')}
                     >
-                        <FontAwesomeIcon icon={faChevronUp} />
+                        <FontAwesomeIcon icon={solid('chevron-up')} />
                     </button>
                     <button type="button" aria-hidden="true" onClick={() => navigate('/')}>
-                        <FontAwesomeIcon icon={faChevronDown} />
+                        <FontAwesomeIcon icon={solid('chevron-down')} />
                     </button>
                 </div>
                 <article className={homeStyles.articleBox}>

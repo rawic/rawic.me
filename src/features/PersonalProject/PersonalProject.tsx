@@ -2,8 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { brands, solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as personalProjectStyles from './personal-project.module.sass';
@@ -62,7 +61,7 @@ export const PersonalProject = (props: PersonalProjectProps) => {
                             rel="noopener noreferrer"
                             aria-label="GitHub"
                         >
-                            <FontAwesomeIcon icon={faGithub} />
+                            <FontAwesomeIcon icon={brands('github')} />
                         </a>
                     )}
                     <a
@@ -70,9 +69,9 @@ export const PersonalProject = (props: PersonalProjectProps) => {
                         className={personalProjectStyles.icon}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Root Wood Studio"
+                        aria-label={props.name}
                     >
-                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                        <FontAwesomeIcon icon={solid('external-link')} />
                     </a>
                 </footer>
             </div>

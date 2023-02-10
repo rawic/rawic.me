@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { navigate, PageProps } from 'gatsby';
+import { PageProps } from 'gatsby';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { regular, solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as homeStyles from './home.module.sass';
@@ -35,14 +34,14 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
                         aria-hidden="true"
                         onClick={() => navigate('/personal-projects/')}
                     >
-                        <FontAwesomeIcon icon={faChevronUp} />
+                        <FontAwesomeIcon icon={solid('chevron-up')} />
                     </button>
                     <button
                         type="button"
                         aria-hidden="true"
                         onClick={() => navigate('/portfolio/')}
                     >
-                        <FontAwesomeIcon icon={faChevronDown} />
+                        <FontAwesomeIcon icon={solid('chevron-down')} />
                     </button>
                 </div>
                 <article className={homeStyles.articleBox}>
@@ -68,7 +67,7 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
                         <h4>
                             {t('experience.heading.part-1')}
                             <span className={homeStyles.heart}>
-                                <FontAwesomeIcon icon={faHeart} />
+                                <FontAwesomeIcon icon={regular('heart')} />
                             </span>{' '}
                             {t('experience.heading.part-2')}
                         </h4>
