@@ -47,8 +47,11 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
                 </div>
                 <article className={homeStyles.articleBox}>
                     <header className={`${homeStyles.articleHeader} gradient-text`}>
-                        <h2 className={`${homeStyles.title}`}>
+                        <h1 className={`${homeStyles.title}`}>
                             <span className={`${homeStyles.me}`}>{t('heading')}</span>
+                        </h1>
+
+                        <h2 className={`${homeStyles.title}`}>
                             {t('subheading.part-1')}
                             <span className="s-white">{t('subheading.warsaw.part-1')}</span>
                             <span className="s-red">{t('subheading.warsaw.part-2')}</span>,

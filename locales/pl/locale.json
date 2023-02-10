@@ -15,7 +15,7 @@
         "linkedin": "Profil LinkedIn"
     },
     "home": {
-        "heading": "Cześć, tu Rafał.",
+        "heading": "Cześć, tu Rafał - Front-End Developer",
         "subheading": {
             "part-1": "Jestem programistą z ",
             "warsaw": {
@@ -42,14 +42,14 @@
         }
     },
     "portfolio": {
-        "heading": "Niektóre projekty, w których uczestniczyłem",
+        "heading": "Niektóre projekty, w których uczestniczyłem, jako Front-End Developer",
         "description": {
             "part-1": "Uczestniczenie w rozwoju tych aplikacji",
             "part-2": "była dla mnie wielką przyjemnością."
         }
     },
     "personal-projects": {
-        "heading": "# Kilka projektów nad którymi aktualnie pracuję",
+        "heading": "# Kilka projektów, nad którymi aktualnie pracuję, jako Front-End Developer",
         "description": {
             "part-1": "W wolnym czasie staram się realizować",
             "part-2": "własne pomysły, którymi chętnie dzielę się z innymi."
@@ -68,16 +68,16 @@
     },
     "seo": {
         "home": {
-            "title": "Rafał Wichowski - Front-End Developer, UI Designer | RAWIC",
-            "description": "Doświadczony Front-End Developer i UI Designer z Warszawy, specjalizujący się w tworzeniu aplikacji internetowych i projektowaniu interfejsu. Skupiam się na dbałości o szczegóły, dobrym designie i czystych praktykach kodowania. Posiadam znajomość HTML5, CSS3, JavaScript, React oraz innych narzędzi. Jestem gotów na nowe wyzwania."
+            "title": "Rafał Wichowski - Front-End Developer | RAWIC",
+            "description": "Front-End Developer, specjalista w tworzeniu przyjaznych użytkownikom stron i aplikacji. Realizuję m.in. e-commerce i landing pages z użyciem narzędzi takich jak HTML, CSS, JavaScript, React i innych. Dbałość o szczegóły i dobry design."
         },
         "portfolio": {
-            "title": "Rafał Wichowski - Front-End Developer, UI Designer - Portfolio | RAWIC",
-            "description": "Jestem Front-End Developerem specjalizującym się w tworzeniu responsywnych, przyjaznych dla użytkownika stron internetowych i aplikacji webowych. Moje portfolio zawiera szeroki zakres projektów od sklepów internetowych po landing pages, wszystko stworzone za pomocą narzędzi takich jak Javascript, React oraz narzędzi związanych z Reactem jak Gatsby, Redux, Storybook. Posiadam doświadczenie w pracy z klientami różnych rozmiarów i jestem zaangażowany w dostarczanie wysokiej jakości rozwiązań, które spełniają potrzeby zarówno użytkowników, jak i biznesów."
+            "title": "Portfolio | Rafał Wichowski - Front-End Developer | RAWIC",
+            "description": "Front-End Developer specjalizujący się w tworzeniu responsywnych i przyjaznych stron i aplikacji. Zróżnicowane projekty: e-commerce, landing pages. Technologie: Javascript, React, Gatsby, Redux. Dostarczanie wysokiej jakości rozwiązań."
         },
         "personal-projects": {
-            "title": "Rafał Wichowski - Front-End Developer, UI Designer - Moje Projekty | RAWIC",
-            "description": "Interesuje mnie tworzenie stron internetowych, dlatego w wolnych chwilach realizuję własne projekty. Od sklepów internetowych po landing pages - wszystko z wykorzystaniem technologii takich jak JavaScript, React, Gatsby i innych. Moje prywatne projekty to nie tylko prezentacja moich umiejętności technicznych, ale także możliwości kreatywnego myślenia i projektowania."
+            "title": "Moje Projekty | Rafał Wichowski - Front-End Developer | RAWIC",
+            "description": "Tworzenie stron internetowych to moja pasja. W wolnych chwilach realizuję własne projekty z wykorzystaniem technologii takich jak JavaScript, React i Gatsby. Moje prywatne projekty to nie tylko prezentacja moich umiejętności technicznych, ale także  kreatywnego projektowania i myślenia."
         }
     }
 }

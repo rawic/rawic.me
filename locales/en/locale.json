@@ -15,7 +15,7 @@
         "linkedin": "LinkedIn profile"
     },
     "home": {
-        "heading": "Hello, my name is Rafał.",
+        "heading": "Hello, I'm Rafał - Experienced Front-End Developer",
         "subheading": {
             "part-1": "I am a programmer from ",
             "warsaw": {
@@ -42,14 +42,14 @@
         }
     },
     "portfolio": {
-        "heading": "Some projects I have participated in",
+        "heading": "Some projects I have participated in as a Front-End Developer",
         "description": {
             "part-1": "Participating in the development of\u00A0the\u00A0following applications",
             "part-2": "was a\u00A0great pleasure for\u00A0me."
         }
     },
     "personal-projects": {
-        "heading": "# A few projects that I am currently working on",
+        "heading": "# A few projects that I am currently working on as Front-End Developer",
         "description": {
             "part-1": "In my free time, I try to implement my own ideas ",
             "part-2": "and I am happy to share them with others."
@@ -68,16 +68,16 @@
     },
     "seo": {
         "home": {
-            "title": "Rafał Wichowski - Front-End Developer, UI Designer | RAWIC",
-            "description": "Experienced Front-End Developer and UI Designer from Warsaw, specializing in building web applications and designing UI. Strong emphasis on attention to detail, good design, and clean code practices. Skilled in HTML5, CSS3, JavaScript, React, and more. Available for new challenges and team projects."
+            "title": "Rafał Wichowski - Front-End Developer | RAWIC",
+            "description": "Experienced Front-End Developer & UI Designer from Warsaw specializing in web apps & UI design. Skilled in HTML5, CSS3, JS, React. Focus on detail, design & clean code. Available for new projects & challenges."
         },
         "portfolio": {
-            "title": "Rafał Wichowski - Front-End Developer, UI Designer - Portfolio | RAWIC",
-            "description": "I'm a Front-End Developer specializing in building responsive, user-friendly websites and web apps. My portfolio features a range of projects from e-commerce sites to landing pages, all created using tools like Javascript, React and React related tools like Gatsby, Redux, Storybook. With experience working with clients of all sizes, I'm dedicated to delivering high-quality work that meets the needs of both users and businesses."
+            "title": "Portfolio | Rafał Wichowski - Front-End Developer | RAWIC",
+            "description": "Experienced Front-End Dev creating responsive sites & web apps. Portfolio incl. e-commerce & landing pages using JS, React, Gatsby, Redux. Delivering high-quality work for clients of all sizes."
         },
         "personal-projects": {
-            "title": "Rafał Wichowski - Front-End Developer, UI Designer - My Projects | RAWIC",
-            "description": "Discover my passion for web development through my personal projects. From e-commerce websites to landing pages, these projects showcase my proficiency in Javascript, React, Gatsby, and other industry-standard tools. My personal projects are not only a demonstration of my technical skills but also my ability to think creatively and push the boundaries of what's possible. Take a look at my personal projects page to see the results of my own ideas and hard work."
+            "title": "My Projects | Rafał Wichowski - Front-End Developer | RAWIC",
+            "description": "Web developer passionate about creating e-commerce & landing pages using JS, React, Gatsby. My personal projects showcase my tech skills & creative thinking. Explore my work on my personal projects page."
         }
     }
 }
