@@ -4,7 +4,8 @@
         "greetings": "Cześć",
         "portfolio": "Portfolio",
         "my-projects": "Moje projekty",
-        "cv": "Curriculum vitae"
+        "cv": "Curriculum vitae",
+        "cv-short": "CV"
     },
     "footer": {
         "designs": "Projekty"
@@ -15,7 +16,7 @@
         "linkedin": "Profil LinkedIn"
     },
     "home": {
-        "heading": "Cześć, tu Rafał - Front-End Developer",
+        "heading": "Cześć, tu Rafał -\u00A0Front\u2011End\u00A0Developer",
         "subheading": {
             "part-1": "Jestem programistą z ",
             "warsaw": {
@@ -26,7 +27,7 @@
         },
         "about": {
             "heading": "O mnie",
-            "description": "Wdrażam rozwiązania warstwy Front-End, ale\u00A0ambitnie dążę do\u00A0wszechstronności w\u00A0branży IT. Mam wieloletnie doświadczenie w\u00A0budowaniu aplikacji internetowych. Potrafię projektować UI, a\u00A0także znam podstawy UX.",
+            "description": "Wdrażam rozwiązania warstwy Front\u2011End, ale\u00A0ambitnie dążę do\u00A0wszechstronności w\u00A0branży IT. Mam wieloletnie doświadczenie w\u00A0budowaniu aplikacji internetowych. Potrafię projektować UI, a\u00A0także znam podstawy UX.",
             "description-2": "Potrafię pracować indywidualnie jak i\u00A0w\u00A0ramach zespołu. Zawsze chętnie pomagam innym. Lubię się uczyć, dzielić wiedzą i\u00A0uważnie słucham. Niezależnie od\u00A0wyzwania, dążę do\u00A0realizacji idealnego produktu, o\u00A0odpowiedniej wydajności, użyteczności i\u00A0dostępności. Mądrze pracuję, aby to\u00A0osiągnąć."
         },
         "experience": {
@@ -42,14 +43,14 @@
         }
     },
     "portfolio": {
-        "heading": "Niektóre projekty, w których uczestniczyłem, jako Front-End Developer",
+        "heading": "Niektóre projekty, w których uczestniczyłem, jako Front\u2011End Developer",
         "description": {
             "part-1": "Uczestniczenie w rozwoju tych aplikacji",
             "part-2": "była dla mnie wielką przyjemnością."
         }
     },
     "personal-projects": {
-        "heading": "# Kilka projektów, nad którymi aktualnie pracuję, jako Front-End Developer",
+        "heading": "# Kilka projektów, nad którymi aktualnie pracuję, jako Front\u2011End Developer",
         "description": {
             "part-1": "W wolnym czasie staram się realizować",
             "part-2": "własne pomysły, którymi chętnie dzielę się z innymi."

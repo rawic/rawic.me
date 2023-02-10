@@ -1,7 +1,15 @@
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { faLaughBeam, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faDesktop, faPaperclip } from '@fortawesome/free-solid-svg-icons';
+import {
+    faDesktop,
+    faGrip,
+    faHouse,
+    faHouseChimney,
+    faLayerGroup,
+    faListCheck,
+    faPaperclip,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ROUTES } from '@routes';
 
@@ -38,26 +46,26 @@ export const Menu = () => {
             <ul className={menuStyles.mobileNav}>
                 <li>
                     <Link to="/" activeClassName={menuStyles.active}>
-                        <FontAwesomeIcon icon={faLaughBeam} />
+                        <FontAwesomeIcon icon={faHouseChimney} />
                         {t('greetings')}
                     </Link>
                 </li>
                 <li>
                     <Link to="/portfolio/" activeClassName={menuStyles.active}>
-                        <FontAwesomeIcon icon={faDesktop} />
+                        <FontAwesomeIcon icon={faLayerGroup} />
                         {t('portfolio')}
                     </Link>
                 </li>
                 <li>
                     <Link to="/personal-projects/" activeClassName={menuStyles.active}>
-                        <FontAwesomeIcon icon={faUser} />
+                        <FontAwesomeIcon icon={faListCheck} />
                         {t('my-projects')}
                     </Link>
                 </li>
                 <li>
                     <a href={cvLink} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faPaperclip} />
-                        {t('cv')}
+                        {t('cv-short')}
                     </a>
                 </li>
             </ul>

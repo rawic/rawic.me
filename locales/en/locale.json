@@ -4,7 +4,8 @@
         "greetings": "Greetings",
         "portfolio": "Portfolio",
         "my-projects": "My projects",
-        "cv": "Curriculum vitae"
+        "cv": "Curriculum vitae",
+        "cv-short": "CV"
     },
     "footer": {
         "designs": "Designs"
@@ -15,7 +16,7 @@
         "linkedin": "LinkedIn profile"
     },
     "home": {
-        "heading": "Hello, I'm Rafał - Experienced Front-End Developer",
+        "heading": "Hello, I'm Rafał -\u00A0Experienced\u00A0Front\u2011End\u00A0Developer",
         "subheading": {
             "part-1": "I am a programmer from ",
             "warsaw": {
@@ -26,7 +27,7 @@
         },
         "about": {
             "heading": "About me",
-            "description": "I specialize in\u00A0implementing Front-End solutions, but I\u00A0am ambitious in\u00A0becoming well-rounded in\u00A0the\u00A0IT industry. I have several years of experience in building web applications, designing UI, and\u00A0have a\u00A0basic understanding of UX.",
+            "description": "I specialize in\u00A0implementing Front-End solutions, but I\u00A0am ambitious in\u00A0becoming well\u2011rounded in\u00A0the\u00A0IT industry. I have several years of experience in building web applications, designing UI, and\u00A0have a\u00A0basic understanding of UX.",
             "description-2": "I am capable of\u00A0working independently and\u00A0as part of\u00A0a\u00A0team. I am always willing to\u00A0help others and\u00A0enjoy learning, sharing knowledge, and\u00A0listening attentively. Regardless of\u00A0the\u00A0challenge, I strive to\u00A0achieve a\u00A0perfect product with appropriate performance, usability, and\u00A0accessibility. I\u00A0work intelligently to achieve this."
         },
         "experience": {
