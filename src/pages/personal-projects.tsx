@@ -40,7 +40,7 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
                 </div>
                 <article className={homeStyles.articleBox}>
                     <header className={`${homeStyles.articleHeader} gradient-text`}>
-                        <span className={`${homeStyles.me}`}>{t('heading')}</span>
+                        <h1 className={`${homeStyles.me}`}>{t('heading')}</h1>
                         <h2 className={`${homeStyles.title}`}>
                             {t('description.part-1')}
                             <span className="break">{t('description.part-2')}</span>

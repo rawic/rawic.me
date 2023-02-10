@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import PropTypes from 'prop-types';
 
+import PropTypes from 'prop-types';
 import { SEOProps } from './SEO.types';
 
 export const SEO = ({
@@ -39,7 +39,7 @@ export const SEO = ({
         <>
             {/* General tags */}
             <html lang={lang} />
-            <title>{`${pageTitle} | Rafał Wichowski`}</title>
+            <title>{`${pageTitle}`}</title>
             <meta name="description" content={pageDescription} />
             <meta name="author" content={seo.author} />
             <meta name="image" content={seo.image} />
