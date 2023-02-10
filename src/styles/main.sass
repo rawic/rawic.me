@@ -2,24 +2,28 @@
     font-family: 'GTWalsheimPro'
     src: url('../fonts/GTWalsheimProBold.woff2') format("woff2")
     font-weight: bold
+    font-display: swap
     font-style: normal
 
 @font-face
     font-family: 'GTWalsheimPro'
     src: url('../fonts/GTWalsheimProMedium.woff2') format("woff2")
     font-weight: 500
+    font-display: swap
     font-style: normal
 
 @font-face
     font-family: 'GTWalsheimPro'
     src: url('../fonts/GTWalsheimProLight.woff2') format("woff2")
     font-weight: 300
+    font-display: swap
     font-style: normal
 
 @font-face
     font-family: 'GTWalsheimPro'
     src: url('../fonts/GTWalsheimProRegular.woff2') format("woff2")
     font-weight: normal
+    font-display: swap
     font-style: normal
 
 ::selection
@@ -34,8 +38,6 @@
 
 *
     box-sizing: border-box
-
-h2
 
 html, body
     overflow: hidden
@@ -289,14 +291,14 @@ main
         border-radius: 3px
     &.-nojs
         &:hover
-        &::before, &::after
-            display: inline-block
-            text-decoration: none
-            animation-name: tooltip-appear
-            animation-duration: .1s
-            animation-fill-mode: forwards
-            animation-timing-function: ease-in
-            animation-delay: 0s
+            &::before, &::after
+                display: inline-block
+                text-decoration: none
+                animation-name: tooltip-appear
+                animation-duration: .1s
+                animation-fill-mode: forwards
+                animation-timing-function: ease-in
+                animation-delay: 0s
     &.-active
         &::before, &::after
             display: inline-block
