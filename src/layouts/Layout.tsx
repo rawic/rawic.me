@@ -1,10 +1,7 @@
 import '../styles/normalize.css';
 
-import { domAnimation, LazyMotion } from 'framer-motion';
+import { LazyMotion } from 'framer-motion';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-import { useCallback, useEffect } from 'react';
-import Particles from 'react-particles';
-import { loadFull } from 'tsparticles';
 
 import { Background, BackgroundEffects, Footer, Header, Menu, RainEffect } from '@components';
 
