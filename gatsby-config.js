@@ -13,7 +13,7 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-fontawesome-css',
-        'gatsby-plugin-layout',
+        // 'gatsby-plugin-layout',
         {
             resolve: `gatsby-plugin-alias-imports`,
             options: {

@@ -1,4 +1,3 @@
-import { m } from 'framer-motion';
 import { graphql, PageProps } from 'gatsby';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
@@ -9,6 +8,7 @@ import * as stylesPortfolio from '@features/PortfolioProject/portfolio.module.sa
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HeadProps } from '@types';
+import Layout from '@layouts';
 
 const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', {
@@ -18,14 +18,7 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
     const { navigate } = useI18next();
 
     return (
-        <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-                ease: 'linear',
-                duration: 0.5,
-            }}
-        >
+        <Layout>
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
                     <button type="button" aria-hidden="true" onClick={() => navigate('/')}>
@@ -105,7 +98,7 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
                     </ul>
                 </article>
             </div>
-        </m.div>
+        </Layout>
     );
 };
 

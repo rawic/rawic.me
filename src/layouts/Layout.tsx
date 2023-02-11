@@ -1,10 +1,6 @@
 import '../styles/normalize.css';
-
-import { domAnimation, LazyMotion } from 'framer-motion';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-import { useCallback, useEffect } from 'react';
-import Particles from 'react-particles';
-import { loadFull } from 'tsparticles';
+import { LazyMotion, m } from 'framer-motion';
 
 import { Background, BackgroundEffects, Footer, Header, Menu, RainEffect } from '@components';
 
@@ -24,11 +20,15 @@ export const Layout = (props: LayoutProps) => {
             <div className={layoutStyles.pageContainer}>
                 <div className={layoutStyles.pageContent}>
                     <Header />
-                    <main>
-                        <LazyMotion features={loadFeatures} strict>
+                    <LazyMotion features={loadFeatures} strict>
+                        <m.main
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
                             {props.children}
-                        </LazyMotion>
-                    </main>
+                        </m.main>
+                    </LazyMotion>
                     <Menu />
                 </div>
                 <Footer />
