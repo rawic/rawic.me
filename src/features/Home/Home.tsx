@@ -1,4 +1,3 @@
-import { m } from 'framer-motion';
 import { PageProps } from 'gatsby';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
@@ -6,6 +5,7 @@ import { regular, solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as homeStyles from './home.module.sass';
+import Layout from '@layouts';
 
 export const Home = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', { keyPrefix: 'home' });
@@ -19,14 +19,7 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
     const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf' : '/Rafal-Wichowski-CV-PL.pdf';
 
     return (
-        <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-                ease: 'linear',
-                duration: 0.5,
-            }}
-        >
+        <Layout>
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
                     <button
@@ -131,6 +124,6 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
                     </a>
                 </article>
             </div>
-        </m.div>
+        </Layout>
     );
 };

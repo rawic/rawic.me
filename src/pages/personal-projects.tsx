@@ -1,4 +1,3 @@
-import { m } from 'framer-motion';
 import { graphql, PageProps } from 'gatsby';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
@@ -8,6 +7,7 @@ import * as homeStyles from '@features/Home/home.module.sass';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HeadProps } from '@types';
+import Layout from '@layouts';
 
 const PersonalProjectsPage = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', {
@@ -17,14 +17,7 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
     const { navigate } = useI18next();
 
     return (
-        <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-                ease: 'linear',
-                duration: 0.5,
-            }}
-        >
+        <Layout>
             <div className="main-box">
                 <div className={homeStyles.arrowsBox}>
                     <button
@@ -66,7 +59,7 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
                     </div>
                 </article>
             </div>
-        </m.div>
+        </Layout>
     );
 };
 
