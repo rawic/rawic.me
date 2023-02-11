@@ -20,15 +20,15 @@ export const Layout = (props: LayoutProps) => {
             <div className={layoutStyles.pageContainer}>
                 <div className={layoutStyles.pageContent}>
                     <Header />
-                    {/* <LazyMotion features={loadFeatures} strict>
+                    <LazyMotion features={loadFeatures} strict>
                         <m.main
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                        > */}
-                    {props.children}
-                    {/* </m.main>
-                    </LazyMotion> */}
+                        >
+                            {props.children}
+                        </m.main>
+                    </LazyMotion>
                     <Menu />
                 </div>
                 <Footer />
