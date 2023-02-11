@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 export const wrapPageElement = ({ element }) => (
-    <AnimatePresence exitBeforeEnter initial={false}>
+    <AnimatePresence exitBeforeEnter mode="wait" initial={false}>
         {element}
     </AnimatePresence>
 );
