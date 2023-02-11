@@ -1,4 +1,11 @@
 import * as React from 'react';
+import { AnimatePresence } from 'framer-motion';
+
+export const wrapPageElement = ({ element }) => (
+    <AnimatePresence exitBeforeEnter initial={false}>
+        {element}
+    </AnimatePresence>
+);
 
 export const onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
