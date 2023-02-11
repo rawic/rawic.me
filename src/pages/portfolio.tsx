@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { graphql, PageProps } from 'gatsby';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
@@ -18,7 +18,7 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
     const { navigate } = useI18next();
 
     return (
-        <motion.div
+        <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -105,7 +105,7 @@ const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
                     </ul>
                 </article>
             </div>
-        </motion.div>
+        </m.div>
     );
 };
 

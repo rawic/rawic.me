@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { PageProps } from 'gatsby';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
@@ -19,7 +19,7 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
     const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf' : '/Rafal-Wichowski-CV-PL.pdf';
 
     return (
-        <motion.div
+        <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -131,6 +131,6 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
                     </a>
                 </article>
             </div>
-        </motion.div>
+        </m.div>
     );
 };
