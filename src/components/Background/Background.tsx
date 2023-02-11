@@ -64,7 +64,7 @@ export const Background = (props: BackgroundProps) => {
                 onLoad={() => bgRef.current?.selfRef?.classList.add('-active')}
                 {...bgImage}
                 preserveStackingContext
-                critical={true}
+                critical={false}
             />
             <div className="flashbg" ref={flashRef} key={currentPage}>
                 <BackgroundImage {...bgImage} preserveStackingContext />

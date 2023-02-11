@@ -18,7 +18,7 @@ export const Layout = (props: LayoutProps) => {
 
     return (
         <>
-            <Background page={originalPath.replace(/-|\//g, '')} />
+            {/* <Background page={originalPath.replace(/-|\//g, '')} /> */}
             <BackgroundEffects />
             <RainEffect />
             <div className={layoutStyles.pageContainer}>
