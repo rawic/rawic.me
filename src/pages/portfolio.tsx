@@ -7,8 +7,8 @@ import * as homeStyles from '@features/Home/home.module.sass';
 import * as stylesPortfolio from '@features/PortfolioProject/portfolio.module.sass';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { HeadProps } from '@types';
 import Layout from '@layouts';
+import { HeadProps } from '@types';
 
 const PortfolioPage = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', {
