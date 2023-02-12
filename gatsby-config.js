@@ -140,6 +140,7 @@ module.exports = {
                         src: './src/images/icons/icon-192x192.png',
                         sizes: '192x192',
                         type: 'image/png',
+                        purpose: 'any maskable',
                     },
                     {
                         src: './src/images/icons/icon-384x384.png',
