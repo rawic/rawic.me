@@ -13,7 +13,7 @@ export const Menu = () => {
 
     const { language } = useI18next();
 
-    const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf' : '/Rafal-Wichowski-CV-PL.pdf';
+    const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf/' : '/Rafal-Wichowski-CV-PL.pdf/';
 
     return (
         <nav>

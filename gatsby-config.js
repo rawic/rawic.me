@@ -34,31 +34,41 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-sitemap',
             options: {
-                excludes: ['/**/404', '/**/404.html'],
+                excludes: ['/**/*.pdf'],
                 query: `
                     {
                         site {
-                        siteMetadata {
-                            siteUrl
-                        }
+                            siteMetadata {
+                                siteUrl
+                            }
                         }
                         allSitePage(filter: {context: {i18n: {routed: {eq: false}}}}) {
-                        nodes {
-                            context {
-                            i18n {
-                                defaultLanguage
-                                languages
-                                originalPath
+                            nodes {
+                                context {
+                                    i18n {
+                                        defaultLanguage
+                                        languages
+                                        originalPath
+                                    }
+                                }
+                                path
                             }
-                            }
-                            path
-                        }
                         }
                     }
                 `,
+                resolveSiteUrl: () => siteUrl,
+                resolvePages: ({
+                    site: { nodes: siteMetadata },
+                    allSitePage: { nodes: allPages },
+                }) => {
+                    return allPages.map((page) => {
+                        return { ...page };
+                    });
+                },
                 serialize: (node) => {
                     const { languages, originalPath, defaultLanguage } = node.context.i18n;
                     const url = siteUrl + originalPath;
+                    console.log(originalPath, 'asd');
                     const links = [
                         { lang: defaultLanguage, url },
                         { lang: 'x-default', url },
@@ -137,8 +147,8 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
-                host: 'https://rawic.me/',
-                sitemap: 'https://rawic.me/sitemap.xml',
+                host: 'https://rawic.me',
+                sitemap: 'https://rawic.me/sitemap-index.xml',
                 policy: [{ userAgent: '*', allow: '/' }],
             },
         },
@@ -146,4 +156,5 @@ module.exports = {
         // To learn more, visit: https://gatsby.dev/offline
         `gatsby-plugin-offline`,
     ],
+    trailingSlash: 'always',
 };

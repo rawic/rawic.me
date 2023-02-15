@@ -3,9 +3,9 @@ import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { regular, solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Layout from '@layouts';
 
 import * as homeStyles from './home.module.sass';
-import Layout from '@layouts';
 
 export const Home = ({ location }: { location: PageProps['location'] }) => {
     const { t } = useTranslation('', { keyPrefix: 'home' });
@@ -16,7 +16,7 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
 
     const { language } = useI18next();
 
-    const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf' : '/Rafal-Wichowski-CV-PL.pdf';
+    const cvLink = language === 'en' ? '/Rafal-Wichowski-CV.pdf/' : '/Rafal-Wichowski-CV-PL.pdf/';
 
     return (
         <Layout>
