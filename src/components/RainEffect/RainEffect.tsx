@@ -14,7 +14,6 @@ interface Drop {
 const RainEffectRaw = () => {
     const [raindrops, setRaindrops] = useState<Drop[]>([]);
     const [backRaindrops, setBackRaindrops] = useState<Drop[]>([]);
-    console.log('mount');
 
     const generateRain = () => {
         let position = 0;
