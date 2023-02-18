@@ -14,13 +14,14 @@ export const Layout = (props: LayoutProps) => {
     const { originalPath } = useI18next();
 
     return (
-        <LazyMotion features={loadFeatures}>
+        <>
             <Background page={originalPath.replace(/-|\//g, '')} />
             <BackgroundEffects />
             <RainEffect />
             <div className={layoutStyles.pageContainer}>
                 <div className={layoutStyles.pageContent}>
                     <Header />
+                    <LazyMotion features={loadFeatures}>
                         <m.main
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -28,6 +29,7 @@ export const Layout = (props: LayoutProps) => {
                         >
                             {props.children}
                         </m.main>
+                    </LazyMotion>
                     <Menu />
                 </div>
                 <Footer />
