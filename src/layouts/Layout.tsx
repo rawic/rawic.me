@@ -1,6 +1,7 @@
 import { LazyMotion, m } from 'framer-motion';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { lazy, Suspense } from 'react';
+import '../styles/normalize.css';
 
 import { Background, Footer, Header, Menu } from '@components';
 
