@@ -96,9 +96,6 @@ body
     top: 0
     width: 100%
     z-index: 0
-    &.-run-immediately
-        animation-iteration-count: 1
-        animation-name: flash3
     div
         height: 100%
 
@@ -117,26 +114,6 @@ body
 
     96%
         opacity: 1
-
-    to
-        opacity: 0
-
-@keyframes flash3
-    from
-        opacity: 0
-    2%
-        opacity: 0
-    3%
-        opacity: 0.6
-
-    4%
-        opacity: 0.2
-
-    6%
-        opacity: 0.8
-
-    10%
-        opacity: 0
 
     to
         opacity: 0

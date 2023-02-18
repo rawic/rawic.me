@@ -17,20 +17,6 @@ export const Background = (props: BackgroundProps) => {
         if (bgRef.current.complete) setLoaded(true);
     }, []);
 
-    useDidUpdateEffect(() => {
-        if (flashRef?.current && loaded) {
-            flashRef.current.classList.add('-run-immediately');
-            const timeout = setTimeout(
-                () => flashRef.current.classList.remove('-run-immediately'),
-                1000,
-            );
-
-            return () => {
-                clearTimeout(timeout);
-            };
-        }
-    }, [loaded]);
-
     const data = useStaticQuery(graphql`
         {
             home: file(relativePath: { eq: "home-background.jpg" }) {
@@ -54,7 +40,7 @@ export const Background = (props: BackgroundProps) => {
     const currentPage = props.page || 'home';
     const imageData = data[currentPage]?.childImageSharp.gatsbyImageData;
 
-    const image = <GatsbyImage onLoad={handleLoad} alt="" image={imageData} />;
+    const image = <GatsbyImage onLoad={handleLoad} image={imageData} alt="" />;
 
     return (
         <div ref={bgRef} className={`background ${loaded && '-active'}`}>
