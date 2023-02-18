@@ -25,20 +25,14 @@
         "gatsby-plugin-sass": "^6.4.0",
         "gatsby-plugin-sharp": "^5.4.0",
         "gatsby-plugin-sitemap": "^6.4.0",
-        "gatsby-plugin-styled-components": "^6.4.0",
         "gatsby-plugin-transition-link": "^1.20.5",
         "gatsby-source-filesystem": "^5.4.0",
         "gatsby-transformer-sharp": "^5.4.0",
-        "gsap": "^3.11.4",
         "i18next": "^22.4.9",
-        "prop-types": "^15.8.1",
         "react": "^18.2.0",
         "react-copy-to-clipboard": "^5.1.0",
         "react-dom": "^18.2.0",
-        "react-i18next": "^12.1.4",
-        "react-particles": "^2.7.1",
-        "styled-components": "^5.3.6",
-        "tsparticles": "^2.7.1"
+        "react-i18next": "^12.1.4"
     },
     "devDependencies": {
         "@types/react": "^18.0.26",
@@ -46,6 +40,8 @@
         "@typescript-eslint/parser": "^5.48.2",
         "eslint-import-resolver-typescript": "^3.5.3",
         "eslint-plugin-import": "^2.27.5",
+        "gatsby-plugin-perf-budgets": "^0.0.18",
+        "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
         "node-sass": "^8.0.0",
         "prettier": "^2.8.3"
     },

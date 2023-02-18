@@ -12,7 +12,14 @@ module.exports = {
         url: `https://rawic.me/`,
     },
     plugins: [
-        'gatsby-plugin-fontawesome-css',
+        // 'gatsby-plugin-fontawesome-css',
+        // {
+        //     resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+        //     options: {
+        //         devMode: true,
+        //     },
+        // },
+        // 'gatsby-plugin-perf-budgets',
         // 'gatsby-plugin-layout',
         {
             resolve: `gatsby-plugin-alias-imports`,
@@ -77,7 +84,6 @@ module.exports = {
             },
         },
         `gatsby-plugin-sass`,
-        `gatsby-plugin-styled-components`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {

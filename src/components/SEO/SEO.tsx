@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-import PropTypes from 'prop-types';
 import { SEOProps } from './SEO.types';
 
 export const SEO = ({
