@@ -3,11 +3,12 @@
     left: 0
     width: 100%
     height: 100%
-    z-index: 0
+    z-index: 9;
+    pointer-events: none
+    touch-action: none
 
 .back-row
     display: block
-    z-index: 1
     bottom: 60px
     opacity: 0.55
 
@@ -16,7 +17,6 @@
     bottom: 100%
     width: 15px
     height: 40px
-    pointer-events: none
     animation: drop 0.95s linear infinite
 
 @keyframes drop

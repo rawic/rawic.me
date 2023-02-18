@@ -7,13 +7,21 @@ module.exports = {
         title: `RAWIC - Rafał Wichowski | Front-End Developer`,
         description: `Programista Front-End nieustannie poszukujący nowych wyzwań. Ponad 5-letnie doświadczenie w tworzeniu aplikacji internetowych.`,
         author: `RAWIC - Rafał Wichowski`,
-        image: `src/images/icon.png`,
+        image: `${siteUrl}/logo.png`,
         siteUrl,
         url: `https://rawic.me/`,
     },
     plugins: [
         'gatsby-plugin-fontawesome-css',
-        // 'gatsby-plugin-layout',
+        'gatsby-background-image',
+        // {
+        //     resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+        //     options: {
+        //         devMode: true,
+        //     },
+        // },
+        // 'gatsby-plugin-perf-budgets',
+        'gatsby-plugin-layout',
         {
             resolve: `gatsby-plugin-alias-imports`,
             options: {
@@ -87,7 +95,6 @@ module.exports = {
             },
         },
         `gatsby-plugin-sass`,
-        `gatsby-plugin-styled-components`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -120,6 +127,49 @@ module.exports = {
                 theme_color: `#111111`,
                 display: `fullscreen`,
                 icon: `./src/images/icon.png`,
+                icons: [
+                    {
+                        src: './src/images/icons/icon-72x72.png',
+                        sizes: '72x72',
+                        type: 'image/png',
+                    },
+                    {
+                        src: './src/images/icons/icon-96x96.png',
+                        sizes: '96x96',
+                        type: 'image/png',
+                    },
+                    {
+                        src: './src/images/icons/icon-128x128.png',
+                        sizes: '128x128',
+                        type: 'image/png',
+                    },
+                    {
+                        src: './src/images/icons/icon-144x144.png',
+                        sizes: '144x144',
+                        type: 'image/png',
+                    },
+                    {
+                        src: './src/images/icons/icon-152x152.png',
+                        sizes: '152x152',
+                        type: 'image/png',
+                    },
+                    {
+                        src: './src/images/icons/icon-192x192.png',
+                        sizes: '192x192',
+                        type: 'image/png',
+                        purpose: 'any maskable',
+                    },
+                    {
+                        src: './src/images/icons/icon-384x384.png',
+                        sizes: '384x384',
+                        type: 'image/png',
+                    },
+                    {
+                        src: './src/images/icons/icon-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png',
+                    },
+                ],
                 cache_busting_mode: 'none',
             },
         },

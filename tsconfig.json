@@ -23,6 +23,7 @@
         "strict": true,
         "paths": {
             "@components": ["./src/components"],
+            "@components/*": ["./src/components/*"],
             "@features": ["./src/features"],
             "@layouts": ["./src/layouts"],
             "@hooks": ["./src/hooks"],

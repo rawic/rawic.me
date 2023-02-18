@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import * as effectStyles from './backgroundEffects.module.sass';
 
-export const BackgroundEffects = () => (
+const BackgroundEffectsRaw = () => (
     <>
         <div className={effectStyles.flash} />
         <div className={effectStyles.fogContainer}>
@@ -9,3 +10,5 @@ export const BackgroundEffects = () => (
         </div>
     </>
 );
+
+export const BackgroundEffects = memo(BackgroundEffectsRaw);

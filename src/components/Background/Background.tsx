@@ -1,34 +1,17 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
-import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
-import { useRef } from 'react';
-
-import { useDidUpdateEffect } from '@hooks';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { useEffect, useState } from 'react';
 
 import { BackgroundProps } from './Background.types';
 
 export const Background = (props: BackgroundProps) => {
-    const bgRef = useRef<any>(null);
-    const flashRef = useRef<any>(null);
+    const [loaded, setLoaded] = useState(false);
 
-    useDidUpdateEffect(() => {
-        if (flashRef?.current) {
-            flashRef.current.classList.add('-run-immediately');
-            const timeout = setTimeout(
-                () => flashRef.current.classList.remove('-run-immediately'),
-                1000,
-            );
-
-            return () => {
-                clearTimeout(timeout);
-            };
-        }
-    }, [bgRef.current?.selfRef]);
+    const handleLoad = () => setLoaded(true);
 
     const data = useStaticQuery(graphql`
         {
-            home: file(relativePath: { eq: "home-background2.jpg" }) {
+            home: file(relativePath: { eq: "home-background.jpg" }) {
                 childImageSharp {
                     gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 100)
                 }
@@ -46,28 +29,22 @@ export const Background = (props: BackgroundProps) => {
         }
     `);
 
+    useEffect(() => {
+        const background = document.querySelector('.background');
+        if (loaded && background) {
+            background.classList.add('-active');
+        }
+    }, [loaded]);
+
     const currentPage = props.page || 'home';
     const imageData = data[currentPage]?.childImageSharp.gatsbyImageData;
-    const image = getImage(imageData);
-    const bgImage = convertToBgImage(image);
-
-    if (!bgImage) {
-        return null;
-    }
 
     return (
-        <>
-            <BackgroundImage
-                Tag="div"
-                className="background"
-                ref={bgRef}
-                onLoad={() => bgRef.current?.selfRef?.classList.add('-active')}
-                {...bgImage}
-                preserveStackingContext
-            />
-            <div className="flashbg" ref={flashRef} key={currentPage}>
-                <BackgroundImage {...bgImage} preserveStackingContext />
+        <div className="background">
+            <GatsbyImage onLoad={handleLoad} alt="" image={imageData} />
+            <div className="flashbg">
+                <GatsbyImage onLoad={handleLoad} alt="" image={imageData} />
             </div>
-        </>
+        </div>
     );
 };
