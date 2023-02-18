@@ -59,6 +59,22 @@ export const SEO = ({
             '@type': 'ContactPoint',
             email: 'hi@rawic.me',
         },
+        knowsAbout: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'React',
+            'Gatsby',
+            'Next.js',
+            'GraphQL',
+            'TypeScript',
+            'Sass',
+            'Styled Components',
+            'Figma',
+            'Adobe XD',
+            'Adobe Photoshop',
+            'Adobe Illustrator',
+        ],
     };
 
     const schemaAsString = JSON.stringify(schema, null, 2);
