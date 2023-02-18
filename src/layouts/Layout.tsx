@@ -1,6 +1,6 @@
 import '../styles/normalize.css';
 
-import { LazyMotion, motion } from 'framer-motion';
+import { LazyMotion, m } from 'framer-motion';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 
 import { Background, BackgroundEffects, Footer, Header, Menu, RainEffect } from '@components';
@@ -14,20 +14,20 @@ export const Layout = (props: LayoutProps) => {
     const { originalPath } = useI18next();
 
     return (
-        <>
+        <LazyMotion features={loadFeatures}>
             <Background page={originalPath.replace(/-|\//g, '')} />
             <BackgroundEffects />
             <RainEffect />
             <div className={layoutStyles.pageContainer}>
                 <div className={layoutStyles.pageContent}>
                     <Header />
-                    <motion.main
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        {props.children}
-                    </motion.main>
+                        <m.main
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            {props.children}
+                        </m.main>
                     <Menu />
                 </div>
                 <Footer />
