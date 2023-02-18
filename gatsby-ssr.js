@@ -1,12 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 
-import { AnimatePresence } from 'framer-motion';
+// import { AnimatePresence } from 'framer-motion';
 
-export const wrapPageElement = ({ element }) => (
-    <AnimatePresence mode="wait" initial={false}>
-        {element}
-    </AnimatePresence>
-);
+// export const wrapPageElement = ({ element }) => (
+//     <AnimatePresence mode="wait" initial={false}>
+//         {element}
+//     </AnimatePresence>
+// );
 
 export const onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
