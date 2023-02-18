@@ -50,7 +50,7 @@ export const SEO = ({
             'https://github.com/rawic',
             'https://twitter.com/rafalwichowski',
         ],
-        image: 'https://rawic.me/logo.svg',
+        image: seo.image,
         description: {
             '@language': lang,
             '@value': schemaDescription,
