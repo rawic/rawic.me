@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useEffect, useState } from 'react';
 
 import * as rainEffectStyles from './rain-effect.module.sass';
@@ -10,9 +11,10 @@ interface Drop {
     animationDuration?: string;
 }
 
-export const RainEffect = () => {
+const RainEffectRaw = () => {
     const [raindrops, setRaindrops] = useState<Drop[]>([]);
     const [backRaindrops, setBackRaindrops] = useState<Drop[]>([]);
+    console.log('mount');
 
     const generateRain = () => {
         let position = 0;
@@ -43,7 +45,6 @@ export const RainEffect = () => {
     };
 
     useEffect(() => {
-        console.log('mount');
         generateRain();
     }, []);
 
@@ -68,3 +69,5 @@ export const RainEffect = () => {
         </div>
     );
 };
+
+export const RainEffect = memo(RainEffectRaw);

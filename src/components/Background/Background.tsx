@@ -1,13 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 import BackgroundImage from 'gatsby-background-image';
+import { Suspense } from 'react';
 
 import { BackgroundProps } from './Background.types';
 
 export const Background = (props: BackgroundProps) => {
     const bgRef = useRef<any>(null);
     const flashRef = useRef<any>(null);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const data = useStaticQuery(graphql`
         {
@@ -41,25 +43,24 @@ export const Background = (props: BackgroundProps) => {
     const currentPage = props.page || 'home';
     const imageData = data[currentPage]?.childImageSharp.fluid;
 
-    console.log(imageData, 'asd');
+    useEffect(() => {
+        if (bgRef.current?.selfRef?.classList && !isLoaded) {
+            bgRef.current.selfRef.classList.add('-active');
+            setIsLoaded(true);
+        }
+    }, [bgRef, isLoaded]);
 
-    const image = (
-        <BackgroundImage
-            className="background"
-            alt=""
-            fluid={imageData}
-            onLoad={() => bgRef.current?.selfRef?.classList.toggle('-active')}
-            ref={bgRef}
-        />
-    );
+    if (!imageData) {
+        return null;
+    }
 
     return (
-        <>
-            {image}
+        <Suspense fallback={null}>
+            <BackgroundImage className="background" alt="" fluid={imageData} ref={bgRef} />
 
             <div className="flashbg" ref={flashRef}>
-                {image}
+                <BackgroundImage className="background" alt="" fluid={imageData} />
             </div>
-        </>
+        </Suspense>
     );
 };
