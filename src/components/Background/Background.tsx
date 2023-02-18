@@ -41,9 +41,9 @@ export const Background = (props: BackgroundProps) => {
 
     return (
         <div className="background">
-            <GatsbyImage onLoad={handleLoad} alt="" image={imageData} />;
+            <GatsbyImage onLoad={handleLoad} alt="" image={imageData} />
             <div className="flashbg">
-                <GatsbyImage onLoad={handleLoad} alt="" image={imageData} />;
+                <GatsbyImage onLoad={handleLoad} alt="" image={imageData} />
             </div>
         </div>
     );
