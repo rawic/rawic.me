@@ -43,6 +43,7 @@ export const RainEffect = () => {
     };
 
     useEffect(() => {
+        console.log('mount');
         generateRain();
     }, []);
 

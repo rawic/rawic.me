@@ -15,7 +15,7 @@ export const Layout = (props: LayoutProps) => {
 
     return (
         <>
-            <Background page={originalPath.replace(/-|\//g, '')} />
+            <Background key={originalPath} page={originalPath.replace(/-|\//g, '')} />
             <BackgroundEffects />
             <RainEffect />
             <div className={layoutStyles.pageContainer}>
@@ -23,7 +23,7 @@ export const Layout = (props: LayoutProps) => {
                     <Header />
                     <LazyMotion features={loadFeatures}>
                         <m.main
-                            key="main"
+                            key={originalPath}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5 }}

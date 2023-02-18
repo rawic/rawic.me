@@ -12,7 +12,7 @@ module.exports = {
         url: `https://rawic.me/`,
     },
     plugins: [
-        // 'gatsby-plugin-fontawesome-css',
+        'gatsby-plugin-fontawesome-css',
         // {
         //     resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
         //     options: {
@@ -20,7 +20,7 @@ module.exports = {
         //     },
         // },
         // 'gatsby-plugin-perf-budgets',
-        // 'gatsby-plugin-layout',
+        'gatsby-plugin-layout',
         {
             resolve: `gatsby-plugin-alias-imports`,
             options: {
