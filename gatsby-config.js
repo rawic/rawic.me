@@ -13,6 +13,7 @@ module.exports = {
     },
     plugins: [
         'gatsby-plugin-fontawesome-css',
+        'gatsby-background-image',
         // {
         //     resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
         //     options: {
