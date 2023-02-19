@@ -13,14 +13,28 @@ const IndexPage = (props: PageProps) => {
 
 export default IndexPage;
 
-export const Head = ({ data }: HeadProps) => {
+export const Head = ({
+    data,
+    pageContext: {
+        i18n: { originalPath },
+    },
+}: HeadProps) => {
     const { data: locales, language } = data.locales.edges[0].node;
     const obj = locales ? JSON.parse(locales) : {};
     const { title, description } = obj.seo.home;
     const lang = language === 'pl' ? 'pl/' : '';
     const url = `https://rawic.me/${lang}`;
+    const altUrl = `https://rawic.me${language === 'en' ? '/pl' : ''}${originalPath}`;
 
-    return <SEO title={`🤓 ${title}`} description={description} url={url} lang={language} />;
+    return (
+        <SEO
+            title={`🤓 ${title}`}
+            description={description}
+            url={url}
+            lang={language}
+            altUrl={altUrl}
+        />
+    );
 };
 
 export const query = graphql`

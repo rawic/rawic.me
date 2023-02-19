@@ -10,6 +10,7 @@ export const SEO = ({
     url,
     children,
     lang = 'en',
+    altUrl,
 }: SEOProps) => {
     const {
         site: { siteMetadata: seo },
@@ -88,6 +89,7 @@ export const SEO = ({
             <meta name="author" content={seo.author} />
             <meta name="image" content={seo.image} />
             <link rel="canonical" href={pageUrl} />
+            <link rel="alternate" hrefLang={lang === 'en' ? 'pl' : 'en'} href={altUrl} />
 
             {/* OpenGraph tags */}
             <meta property="og:title" content={pageTitle} />

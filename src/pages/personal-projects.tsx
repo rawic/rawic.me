@@ -58,16 +58,28 @@ const PersonalProjectsPage = ({ location }: { location: PageProps['location'] })
 
 export default PersonalProjectsPage;
 
-export const Head = ({ data }: HeadProps) => {
+export const Head = ({
+    data,
+    pageContext: {
+        i18n: { originalPath },
+    },
+}: HeadProps) => {
     const { data: locales, language } = data.locales.edges[0].node;
     const obj = locales ? JSON.parse(locales) : {};
     const { title, description } = obj.seo['personal-projects'];
     const lang = language === 'pl' ? 'pl/' : '';
     const url = `https://rawic.me/${lang}personal-projects/`;
+    const altUrl = `https://rawic.me${language === 'en' ? '/pl' : ''}${originalPath}`;
 
     return (
         <>
-            <SEO title={`🤓 ${title}`} description={description} url={url} lang={language} />
+            <SEO
+                title={`🤓 ${title}`}
+                description={description}
+                url={url}
+                lang={language}
+                altUrl={altUrl}
+            />
         </>
     );
 };

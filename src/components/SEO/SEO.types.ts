@@ -6,4 +6,5 @@ export interface SEOProps {
     url?: string;
     children?: React.ReactNode;
     lang?: string;
+    altUrl?: string;
 }

@@ -1,5 +1,7 @@
-import { SEO } from '@components';
 import { graphql } from 'gatsby';
+
+import { SEO } from '@components';
+import { HeadProps } from '@types';
 
 const NotFoundPage = () => (
     <>
@@ -10,7 +12,19 @@ const NotFoundPage = () => (
 
 export default NotFoundPage;
 
-export const Head = () => <SEO title="404: Not found" />;
+export const Head = ({
+    data,
+    pageContext: {
+        i18n: { originalPath },
+    },
+}: HeadProps) => {
+    const { language } = data.locales.edges[0].node;
+    const lang = language === 'pl' ? 'pl/' : '';
+    const url = `https://rawic.me/${lang}`;
+    const altUrl = `https://rawic.me${language === 'en' ? '/pl' : ''}${originalPath}`;
+
+    return <SEO title="404: Not found" url={url} lang={language} altUrl={altUrl} />;
+};
 
 export const query = graphql`
     query ($language: String!) {
