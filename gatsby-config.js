@@ -3,7 +3,7 @@ const path = require('path');
 // const siteUrl = process.env.URL || `https://rawic.me`;
 const {
     NODE_ENV,
-    URL: NETLIFY_SITE_URL = 'https://www.example.com',
+    URL: NETLIFY_SITE_URL = 'https://rawic.me/',
     DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
     CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;
