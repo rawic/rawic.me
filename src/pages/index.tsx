@@ -20,11 +20,7 @@ export const Head = ({ data }: HeadProps) => {
     const lang = language === 'pl' ? 'pl/' : '';
     const url = `https://rawic.me/${lang}`;
 
-    return (
-        <>
-            <SEO title={`🤓 ${title}`} description={description} url={url} lang={language} />
-        </>
-    );
+    return <SEO title={`🤓 ${title}`} description={description} url={url} lang={language} />;
 };
 
 export const query = graphql`
