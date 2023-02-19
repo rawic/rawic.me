@@ -9,4 +9,9 @@ export interface HeadProps {
             }[];
         };
     };
+    pageContext: {
+        i18n: {
+            originalPath: string;
+        };
+    };
 }
