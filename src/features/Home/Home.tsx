@@ -71,19 +71,20 @@ export const Home = ({ location }: { location: PageProps['location'] }) => {
                         <li>SCSS</li>
                         <li>Bootstrap</li>
                         <li>Foundation</li>
+                        <li>Tailwind</li>
                     </ul>
 
                     <ul className={homeStyles.skillsList}>
                         <li className={homeStyles.highlight}>JavaScript</li>
                         <li>ES5/6</li>
-                        <li>
-                            React (Redux, Gatsby, GraphQL, Storybook, React Testing Library, Jest)
-                        </li>
                         <li>TypeScript</li>
-                        <li>Strapi</li>
-                        <li>Vue.js</li>
+                        <li>Next.js</li>
+                        <li>
+                            React (Redux, Zustand, Gatsby, GraphQL, Styled Components, React Testing
+                            Library, Jest, Storybook)
+                        </li>
                         <li>Webpack</li>
-                        <li>Parcel</li>
+                        <li>Vite</li>
                     </ul>
 
                     <ul className={homeStyles.skillsList}>
